@@ -1,0 +1,56 @@
+{
+    "countys": {
+        "name": "county1",
+        "districts": [
+            {
+                "name": "district1",
+                "schools": [
+                    {
+                        "name": "school1"
+                    },
+                    {
+                        "name": "school2"
+                    }
+                ]
+            },
+            {
+                "name": "district2",
+                "schools": [
+                    {
+                        "name": "school3"
+                    },
+                    {
+                        "name": "school4"
+                    }
+                ]
+            },
+            {
+                "name": "county2",
+                "districts": [
+                    {
+                        "name": "district3",
+                        "schools": [
+                            {
+                                "name": "school5"
+                            },
+                            {
+                                "name": "school6"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "district4",
+                        "schools": [
+                            {
+                                "name": "school7"
+                            },
+                            {
+                                "name": "school8"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

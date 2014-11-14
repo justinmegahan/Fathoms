@@ -1,0 +1,98 @@
+# county1:
+#     district1:
+#         name: "district1name"
+#         schools:
+#             school1:
+#                 name: "school1name"
+#                 math: 3
+#                 english: 2
+#             school2:
+#                 name: "school2name"
+#                 math: 3
+#                 english: 2
+#     district2:        
+#         name: "district2name"
+#         schools:
+#             school3:
+#                 name: "school3name"
+#                 math: 3
+#                 english: 2
+#             school4:
+#                 name: "school4name"
+#                 math: 3
+#                 english: 2
+# county2:
+#     district3:
+#         name: "district3name"
+#         schools:
+#             school5:
+#                 name: "school5name"
+#                 math: 3
+#                 english: 2
+#             school6:
+#                 name: "school6name"
+#                 math: 3
+#                 english: 2
+#     district4:
+#         name: "district4test"
+#         schools:
+#             school7:
+#                 name: "school7name"
+#                 math: 3
+#                 english: 2
+#             school8:
+#                 name: "school8name"
+#                 math: 3
+#                 english: 2
+
+counties:
+    county1:
+        name: "county1name"
+        districts:
+            district1:
+                name: "district1name"
+                schools:
+                    school1:
+                        name: "school1name"
+                        math: 3
+                        english: 2
+                    school2:
+                        name: "school2name"
+                        math: 3
+                        english: 2
+            district2:        
+                    name: "district2name"
+                    schools:
+                        school3:
+                            name: "school3name"
+                            math: 3
+                            english: 2
+                        school4:
+                            name: "school4name"
+                            math: 3
+                            english: 2
+    county2:
+        name: "county2name"
+        districts:
+            district3:
+                name: "district3name"
+                schools:
+                    school5:
+                        name: "school5name"
+                        math: 3
+                        english: 2
+                    school6:
+                        name: "school6name"
+                        math: 3
+                        english: 2
+            district4:
+                name: "district4test"
+                schools:
+                    school7:
+                        name: "school7name"
+                        math: 3
+                        english: 2
+                    school8:
+                        name: "school8name"
+                        math: 3
+                        english: 2

@@ -1,0 +1,13 @@
+---
+title: Welcome to Middleman
+---
+
+<h1><%= countyData[:name] %></h1>
+
+<ul>
+	<% for @district in countyData[:districts] %>
+ 	   	<li>
+   			<a href="<%= county %>/<%= @district[0] %>.html"><%= @district[1][:name] %></a>
+ 	   	</li>
+  	<% end %>
+</ul>

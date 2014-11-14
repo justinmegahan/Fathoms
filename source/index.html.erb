@@ -1,0 +1,14 @@
+---
+title: Welcome to Middleman
+---
+
+<div class="welcome">
+
+<h2>Choose a County</h2>
+  <ul>
+  	<% for @county in data.schools3.counties.each %>
+ 	   	<li>
+   			<a href="<%= @county[0] %>.html"><%= @county[0] %></a>
+ 	   	</li>
+  	<% end %>
+  </ul>
