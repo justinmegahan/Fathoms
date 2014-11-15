@@ -11,41 +11,131 @@
 		<link href="../../stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="../../stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="../../stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
-    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    	<script src="../../javascripts/Chart.js" type="text/javascript"></script>
 		<script src="../../javascripts/all.js" type="text/javascript"></script>
 		<script src="../../javascripts/foundation.min.js" type="text/javascript"></script>
 
   </head>
+
   
-	<body class="row">
+	<body>
 
 		<h1>Pilarcitos High, Cont.</h1>
 
-		<ul class="breadcrumbs small-6 large-centered columns">
-			<li><a href="../../index.html">Home</a></li>
-			<li><a href="../../San Mateo.html">San Mateo</a></li>
-			<li><a href="../Cabrillo Unified.html">Cabrillo Unified</a></li>
-			<li class="current"><a href="#">Pilarcitos High, Cont.</a></li>
-		</ul>
+		<div class="row">
 
-		<table class="small-6 large-centered columns">
-			<tbody>
-				<tr><td>State Rank</td><td>0</td></tr>
-				<tr><td>2013 API</td><td>0</td></tr>
-				<tr><td>2012 API</td><td>0</td></tr>
-				<tr><td>Class Size</td><td>18</td></tr>
-				<tr><td>enrollment</td><td>39</td></tr>
-				<tr><td>graduationRate</td><td>69.6</td></tr>
-				<tr><td>latitude</td><td>37.464204</td></tr>
-				<tr><td>longitude</td><td>-122.43542</td></tr>
-				<tr><td>street</td><td>498 Kelly Ave.</td></tr>
-				<tr><td>city</td><td>Half Moon Bay</td></tr>
-				<tr><td>zip</td><td>94019</td></tr>
-				<tr><td>state</td><td>CA</td></tr>
-			</tbody>
-		<table>
+			<ul class="breadcrumbs small-11 small-centered medium-10 medium-centered large-10 large-centered columns">
+				<li><a href="../../index.html">Home</a></li>
+				<li><a href="../../San Mateo.html">San Mateo</a></li>
+				<li><a href="../Cabrillo Unified.html">Cabrillo Unified</a></li>
+				<li class="current"><a href="#">Pilarcitos High, Cont.</a></li>
+			</ul>
 
-		<iframe class="small-6 large-centered columns" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE&center=37.464204,-122.43542&zoom=15"></iframe>
+		</div>
+
+		<div class="row centered">
+
+			<div id="chart" class="small-2 large-2 columns">
+	      		<canvas id="chart-area" width="384" height="384" style="width: 384px; height: 384px;">
+	      		</canvas>
+	    	</div>
+
+	    	<div class="small-4 large-4 columns">
+	      		<p>Graduation rate: 69.6</p>
+	    	</div>
+
+			<script>
+
+			    var doughnutData = [
+			        {
+			          value: 69.6,
+			          color: "#46BFBD"
+			        },
+			        {
+			          value: 30.400000000000006,
+			          color:"#ffffff"
+			        }
+
+			      ];
+
+			      window.onload = function(){
+			        var ctx = document.getElementById("chart-area").getContext("2d");
+			        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+			        	responsive : true,
+			        	showTooltips: false
+			        	});
+			        var ctz = document.getElementById("canvas2").getContext("2d");
+					window.myLine = new Chart(ctz).Line(lineChartData, {
+						responsive: true,
+						scaleShowGridLines : false
+						});
+			        };
+
+			</script>
+
+		</div>
+
+	<div class="row">
+			<div style="width:30%">
+			<div>
+				<canvas id="canvas2" height="450" width="600"></canvas>
+			</div>
+		</div>
+
+ <script>
+		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+		var lineChartData = {
+			labels : ["2011","2012","2013"],
+			datasets : [
+				{
+					label: "School",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : [0,0,0]
+				},
+				{
+					label: "State Average",
+					fillColor : "rgba(151,187,205,0.2)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data : [0,300,400]
+				}
+			]
+
+		}
+
+	</script>
+
+		<div class="row">
+
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><td>State Rank</td><td>0</td></tr>
+					<tr><td>Class Size</td><td>18</td></tr>
+					<tr><td>enrollment</td><td>39</td></tr>
+
+					<tr><td>street</td><td>498 Kelly Ave.</td></tr>
+					<tr><td>city</td><td>Half Moon Bay</td></tr>
+					<tr><td>zip</td><td>94019</td></tr>
+					<tr><td>state</td><td>CA</td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row">
+
+			<iframe class="small-12 small-centered large-centered columns" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE&center=37.464204,-122.43542&zoom=15"></iframe>
+		</div>
 
   </body>
 </html>
