@@ -1,14 +1,26 @@
 ---
 title: Welcome to Middleman
 ---
-
+    <title>Fathoms</title>
+    
+    <link href="stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="javascripts/all.js" type="text/javascript"></script>
+    <script src="javascripts/foundation.min.js" type="text/javascript"></script>
+  
+  </head>
+  
+  <body class="row">
+  	
 <div class="welcome">
 
 <h2>Choose a County</h2>
-  <ul>
-  	<% for @county in data.schools3.counties.each %>
- 	   	<li>
-   			<a href="<%= @county[0] %>.html"><%= @county[0] %></a>
- 	   	</li>
-  	<% end %>
-  </ul>
+  <table class="small-6 large-centered columns">
+    <tbody>
+      <% for @county in data.schools3.counties.each %>
+ 	   	<tr><td><a href="<%= @county[0] %>.html"><%= @county[0] %></a></td></tr>
+      <% end %>
+      </tbody>
+    </table>
