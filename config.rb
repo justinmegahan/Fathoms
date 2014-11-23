@@ -53,28 +53,46 @@ set :images_dir, 'images'
 
 #set :haml, { :ugly => true, :format => :html5 }
 
-# data.schools2.each do |county, _|
-#   proxy "/#{county}.html", "/county.html", :locals => { :county => county, :countyData => _ }, :lang => :en, :ignore => true
-
-#   _.each do |district, __|
-#     proxy "/#{county}/#{district}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => _, :districtData => __}, :lang => :en, :ignore => true
-
-#     __.schools.each do |school, ___|
-#       proxy "/#{county}/#{district}/#{school}.html", "/school.html", :locals => { :school => school, :district => district, :county => county, :districtData => __, :countyData => _, :schoolData => ___}, :lang => :en, :ignore => true
-#     end
-#   end
-# end
-
-data.schools3.each do |test, _|
+data.high.each do |test, _|
   
   _.each do |county, __|
-    proxy "/#{county}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+    proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
     __.districts.each do |district, ___|
-      proxy "/#{county}/#{district}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+      proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
       ___.schools.each do |school, ____|
-        proxy "/#{county}/#{district}/#{school}.html", "/school.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+        proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+      end
+    end
+  end
+end
+
+data.middle.each do |test, _|
+  
+  _.each do |county, __|
+    proxy "/middle/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+
+    __.districts.each do |district, ___|
+      proxy "/middle/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+
+      ___.schools.each do |school, ____|
+        proxy "/middle/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/middle.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+      end
+    end
+  end
+end
+
+data.elementary.each do |test, _|
+  
+  _.each do |county, __|
+    proxy "/elementary/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+
+    __.districts.each do |district, ___|
+      proxy "/elementary/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+
+      ___.schools.each do |school, ____|
+        proxy "/elementary/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/elementary.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
       end
     end
   end

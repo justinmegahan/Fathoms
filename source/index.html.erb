@@ -19,7 +19,7 @@ title: Welcome to Middleman
 <h2>Choose a County</h2>
   <table class="small-6 large-centered columns">
     <tbody>
-      <% for @county in data.schools3.counties.each %>
+      <% for @county in data.high.counties.each %>
  	   	<tr><td><a href="<%= @county[0] %>.html"><%= @county[0] %></a></td></tr>
       <% end %>
       </tbody>
