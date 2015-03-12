@@ -24,8 +24,8 @@ title: Welcome to Middleman
 
 			<ul class="breadcrumbs small-11 small-centered medium-10 medium-centered large-10 large-centered columns">
 				<li><a href="../../../index.html">Home</a></li>
-				<li><a href="../../<%= county %>.html"><%= county %></a></li>
-				<li><a href="../<%= district %>.html"><%= districtData[:name] %></a></li>
+				<li><a href="../../<%= countyData[:slug] %>.html"><%= countyData[:name] %></a></li>
+				<li><a href="../<%= districtData[:slug] %>.html"><%= districtData[:name] %></a></li>
 				<li class="current"><a href="#"><%= schoolData[:name] %></a></li>
 			</ul>
 

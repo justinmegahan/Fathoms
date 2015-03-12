@@ -25,112 +25,180 @@
 
 		<h1>Van Nuys Senior High</h1>
 
-		<div class="row">
-
-			<ul class="breadcrumbs small-11 small-centered medium-10 medium-centered large-10 large-centered columns">
-				<li><a href="../../../index.html">Home</a></li>
-				<li><a href="../../Los Angeles.html">Los Angeles</a></li>
-				<li><a href="../Los Angeles Unified.html">Los Angeles Unified</a></li>
-				<li class="current"><a href="#">Van Nuys Senior High</a></li>
-			</ul>
-
-		</div>
-
-		<div class="row centered">
-	    	
-				<div id="chart" class="small-2 large-2 columns">
-		      		<canvas id="chart-area" width="384" height="384" style="width: 384px; height: 384px;">
-		      		</canvas>
-		    	</div>
-		    	<div class="small-4 large-4 columns">
-		      			<p>Graduation rate: </p>
-		    	</div>
-		    	<script>
-		    		var doughnutData = [
-				        {
-				          value: 82.4,
-				          color: "#46BFBD"
-				        },
-				        {
-				          value: 100-82.4,
-				          color:"#ffffff"
-				        }
-
-				      ];
-				    window.onload = function(){
-				        var ctx = document.getElementById("chart-area").getContext("2d");
-				        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
-				        	responsive : true,
-				        	showTooltips: false
-				        	});
-				        var ctz = document.getElementById("canvas2").getContext("2d");
-						window.myLine = new Chart(ctz).Line(lineChartData, {
-							responsive: true,
-							scaleShowGridLines : false
-							});
-				        };
-		    	</script>
-	    	
-	    </div>
-
-	<div class="row">
-			<div style="width:30%">
-			<div>
-				<canvas id="canvas2" height="450" width="600"></canvas>
-			</div>
-		</div>
-
- <script>
-		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-		var lineChartData = {
-			labels : ["2011","2012","2013"],
-			datasets : [
-				{
-					label: "School",
-					fillColor : "rgba(220,220,220,0.2)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(220,220,220,1)",
-					data : [0,767,762]
-				},
-				{
-					label: "State Average",
-					fillColor : "rgba(151,187,205,0.2)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : [0,300,400]
-				}
-			]
-
-		}
-
-	</script>
-
-		<div class="row">
+ 		<div class="row">
 
 			<table class="small-centered small-12 large-12 large-centered columns">
 				<tbody>
 					<tr><td>State Rank</td><td>6</td></tr>
-					<tr><td>Class Size</td><td>29</td></tr>
 					<tr><td>enrollment</td><td>2719</td></tr>
-
+					<tr><td>enrollment</td><td>82.4</td></tr>
 					<tr><td>street</td><td>6535 Cedros Ave.</td></tr>
 					<tr><td>city</td><td>Van Nuys</td></tr>
-					<tr><td>zip</td><td>91411-1506</td></tr>
+					<tr><td>zip</td><td>91411</td></tr>
 					<tr><td>state</td><td>CA</td></tr>
 				</tbody>
 			</table>
+
+			<h2>API</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><th>Year</th><th>Base</th><th>Growth</th></tr>
+					<tr><td>2007</td><td>670</td><td>-</td></tr>
+					<tr><td>2008</td><td>723</td><td>723</td></tr>
+					<tr><td>2009</td><td>728</td><td>728</td></tr>
+					<tr><td>2010</td><td>715</td><td>716</td></tr>
+					<tr><td>2011</td><td>747</td><td>746</td></tr>
+					<tr><td>2012</td><td>762</td><td>762</td></tr>
+					<tr><td>2013</td><td>-</td><td>767</td></tr>
+				</tbody>
+			</table>
+
+			<h2>California High School Exit Exam</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><th></th><th colspan="2">ELA</th><th colspan="2">Math</th></tr>
+					<tr><th>Year</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th></tr>
+					<tr>
+						<td>2014</td>
+						<td>1205</td>
+						<td>407</td>
+						<td>1225</td>
+						<td>341</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Advanced Placement Exams</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><th>Year</th><th>11th and 12th Grade Enrollment</th><th>Takers</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+					<tr>
+						<td>2011</td>
+						<td>1938968</td>
+						<td>593</td>
+						<td>155</td>
+						<td>215</td>
+						<td>380</td>
+						<td>279</td>
+						<td>194</td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td>1133</td>
+						<td>640</td>
+						<td>171</td>
+						<td>257</td>
+						<td>342</td>
+						<td>327</td>
+						<td>187</td>
+					</tr>
+
+					<tr>
+						<td>2013</td>
+						<td>1076</td>
+						<td>668</td>
+						<td>156</td>
+						<td>280</td>
+						<td>410</td>
+						<td>318</td>
+						<td>196</td>
+					</tr>
+	
+				</tbody>
+			</table>
+
+
+			<h2>ACT</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><th>Year</th><th>12th Grade Enrollment</th><th>Takers</th><th>Average</th><th>21+</th></tr>
+					
+					<tr>
+						<td>2011</td>
+						<td>556</td>
+						<td>104</td>
+						<td>22.95</td>
+						<td>70</td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td>564</td>
+						<td>77</td>
+						<td>23.43</td>
+						<td>54</td>
+					</tr>
+
+					<tr>
+						<td>2013</td>
+						<td>557</td>
+						<td>59</td>
+						<td>22</td>
+						<td>37</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h2>SAT</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr><th>Year</th><th>12th Grade Enrollment</th><th>Takers</th><th>Average Verbal</th><th>Average Math</th><th>Average Writing</th><th>1500+</th></tr>
+					
+					<tr>
+						<td>2011</td>
+						<td>556</td>
+						<td>310</td>
+						<td>512</td>
+						<td>536</td>
+						<td>511</td>
+						<td>160</td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td>564</td>
+						<td>305</td>
+						<td>514</td>
+						<td>535</td>
+						<td>521</td>
+						<td>167</td>
+					</tr>
+					
+					<tr>
+						<td>2013</td>
+						<td>557</td>
+						<td>297</td>
+						<td>515</td>
+						<td>527</td>
+						<td>509</td>
+						<td>158</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+
 		</div>
+
 
 		<div class="row">
 
 			<iframe class="small-12 small-centered large-centered columns" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE&center=34.189555,-118.45314&zoom=15"></iframe>
 		</div>
 
+
+    <!-- Google Tag Manager -->
+		<noscript>
+			<iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPG8BR"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PPG8BR');</script>
+	<!-- End Google Tag Manager -->
+	
   </body>
 </html>
