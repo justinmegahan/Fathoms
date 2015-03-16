@@ -1,0 +1,91 @@
+name: California
+slug: california
+api:
+  base:
+    '2007': '728'
+    '2008': '741'
+    '2009': '754'
+    '2010': '768'
+    '2011': '778'
+    '2012': '791'
+  growth:
+    '2008': '742'
+    '2009': '755'
+    '2010': '767'
+    '2011': '779'
+    '2012': '788'
+    '2013': '790'
+cahsee:
+  ela:
+    '2014':
+      passed: '906405'
+      notpassed: '392898'
+  math:
+    '2014':
+      passed: '901579'
+      notpassed: '435481'
+enrollment: '826'
+graduation: 80.4
+ap:
+  '2011':
+    1112enroll: '954499'
+    takers: '262597'
+    score1: '96947'
+    score2: '103166'
+    score3: '113904'
+    score4: '94087'
+    score5: '72535'
+  '2012':
+    1112enroll: '963101'
+    takers: '281408'
+    score1: '100533'
+    score2: '111514'
+    score3: '122844'
+    score4: '102295'
+    score5: '81034'
+  '2013':
+    1112enroll: '964787'
+    takers: '298669'
+    score1: '106327'
+    score2: '126990'
+    score3: '135837'
+    score4: '108628'
+    score5: '79840'
+act:
+  '2011':
+    grade12enroll: '486549'
+    tested: '82495'
+    average: 21.73
+    21plus: '46577'
+  '2012':
+    grade12enroll: '493947'
+    tested: '87016'
+    average: 21.81
+    21plus: '49321'
+  '2013':
+    grade12enroll: '496859'
+    tested: '90986'
+    average: 21.87
+    21plus: '51821'
+sat:
+  '2011':
+    grade12enroll: '486549'
+    tested: '184627'
+    averageV: '491'
+    averageM: '510'
+    averageW: '491'
+    1500plus: '88647'
+  '2012':
+    grade12enroll: '485654'
+    tested: '189867'
+    averageV: '487'
+    averageM: '506'
+    averageW: '487'
+    1500plus: '87438'
+  '2013':
+    grade12enroll: '474955'
+    tested: '190233'
+    averageV: '488'
+    averageM: '504'
+    averageW: '485'
+    1500plus: '86911'

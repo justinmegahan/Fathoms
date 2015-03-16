@@ -56,47 +56,47 @@ set :images_dir, 'images'
 data.high.each do |test, _|
   
   _.each do |county, __|
-    proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+    proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :stateData => data.highstate, :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
     __.districts.each do |district, ___|
-      proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+      proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :stateData => data.highstate, :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
       ___.schools.each do |school, ____|
-        proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+        proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :stateData => data.highstate, :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
       end
     end
   end
 end
 
-data.middle.each do |test, _|
+# data.middle.each do |test, _|
   
-  _.each do |county, __|
-    proxy "/middle/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+#   _.each do |county, __|
+#     proxy "/middle/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
-    __.districts.each do |district, ___|
-      proxy "/middle/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+#     __.districts.each do |district, ___|
+#       proxy "/middle/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
-      ___.schools.each do |school, ____|
-        proxy "/middle/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/middle.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
-      end
-    end
-  end
-end
+#       ___.schools.each do |school, ____|
+#         proxy "/middle/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/middle.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+#       end
+#     end
+#   end
+# end
 
-data.elementary.each do |test, _|
+# data.elementary.each do |test, _|
   
-  _.each do |county, __|
-    proxy "/elementary/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+#   _.each do |county, __|
+#     proxy "/elementary/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
-    __.districts.each do |district, ___|
-      proxy "/elementary/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+#     __.districts.each do |district, ___|
+#       proxy "/elementary/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
-      ___.schools.each do |school, ____|
-        proxy "/elementary/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/elementary.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
-      end
-    end
-  end
-end
+#       ___.schools.each do |school, ____|
+#         proxy "/elementary/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/elementary.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+#       end
+#     end
+#   end
+# end
 
 # Build-specific configuration
 configure :build do
