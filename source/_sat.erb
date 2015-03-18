@@ -1,0 +1,34 @@
+<div id ="sat" class="row medium-uncollapse large-collapse">
+	<div class="small-12 columns"><h2>SAT Scores</h2></div>
+	<div class="satModule small-6 columns">
+		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %></p>
+		<h3>Verbal</h3>
+		<p><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV].to_i - stateData[:sat][:'2013'][:averageV].to_i end %> above state average</p>
+		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %></p>
+		<h3>Math</h3>
+		<p><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM].to_i - stateData[:sat][:'2013'][:averageM].to_i end %> above state average</p>
+		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %></p>
+		<h3>Writing</h3>
+		<p><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW].to_i - stateData[:sat][:'2013'][:averageW].to_i end %> above state average</p>
+	</div>
+	<div id="satPie" class="ct-chart satModule small-6 columns"></div>
+	<script>
+	new Chartist.Pie('#satPie', {
+		series: [
+			<%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %>,
+			<%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then 800-(schoolData[:sat][:'2013'][:averageV].to_i) end %>,
+			<%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %>,
+			<%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then 800-(schoolData[:sat][:'2013'][:averageM].to_i) end %>,
+			<%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %>,
+			<%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then 800-(schoolData[:sat][:'2013'][:averageW].to_i) end %>
+			]
+	},{
+		donut: true,
+		donutWidth: 60,
+		startAngle: 270,
+		total: 2400,
+		showLabel: false
+	});
+	var $chart = $('#satPie');
+	</script>
+</div>

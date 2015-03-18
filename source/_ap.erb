@@ -1,0 +1,32 @@
+<div class="row medium-uncollapse large-collapse">
+	<div class="small-12 columns"><h2>Advanced Placement Scores</h2></div>
+	<div class="small-4 columns">Some information</div>
+	<div id="ap" class="ct-chart ct-minor-seventh small-8 columns"></div>
+	<script>
+	var data = {
+		labels: ['1', '2', '3', '4', '5'],
+		series: [
+			[<%= if defined?(schoolData[:ap][:'2013'][:score1]) && (schoolData[:ap][:'2013'][:score1] != '') then schoolData[:ap][:'2013'][:score1] end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:score2]) && (schoolData[:ap][:'2013'][:score2] != '') then schoolData[:ap][:'2013'][:score2] end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:score3]) && (schoolData[:ap][:'2013'][:score3] != '') then schoolData[:ap][:'2013'][:score3] end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:score4]) && (schoolData[:ap][:'2013'][:score4] != '') then schoolData[:ap][:'2013'][:score4] end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:score5]) && (schoolData[:ap][:'2013'][:score5] != '') then schoolData[:ap][:'2013'][:score5] end %>]
+			,
+			[<%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then (stateData[:ap][:'2013'][:'score1'].to_f)/(stateData[:ap][:'2013'][:'1112enroll'].to_f)*(schoolData[:ap][:'2013'][:'1112enroll'].to_f) end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then (stateData[:ap][:'2013'][:'score2'].to_f)/(stateData[:ap][:'2013'][:'1112enroll'].to_f)*(schoolData[:ap][:'2013'][:'1112enroll'].to_f) end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then (stateData[:ap][:'2013'][:'score3'].to_f)/(stateData[:ap][:'2013'][:'1112enroll'].to_f)*(schoolData[:ap][:'2013'][:'1112enroll'].to_f) end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then (stateData[:ap][:'2013'][:'score4'].to_f)/(stateData[:ap][:'2013'][:'1112enroll'].to_f)*(schoolData[:ap][:'2013'][:'1112enroll'].to_f) end %>,
+			<%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then (stateData[:ap][:'2013'][:'score5'].to_f)/(stateData[:ap][:'2013'][:'1112enroll'].to_f)*(schoolData[:ap][:'2013'][:'1112enroll'].to_f) end %>]
+		]
+	};
+
+	var options = { seriesBarDistance: 40 };
+
+	new Chartist.Bar('#ap', data, options).on('draw', function(data) {
+		if(data.type === 'bar') {
+			data.element.attr({ style: 'stroke-width: 40px'});
+		}
+	});
+	</script>
+	<p>x% of 11th and 12th graders took an AP exam</p>
+</div>

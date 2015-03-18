@@ -1,0 +1,340 @@
+<h1><%= schoolData[:name] %></h1>
+<table class="small-centered small-12 large-12 large-centered columns">
+	<tbody>
+		<tr>
+						<th></th>
+						<th><%= schoolData[:name] %>
+						</th><th>State Average</th>
+					</tr>
+
+					<tr>
+						<td>State Rank</td>
+						<td><%= schoolData[:stateRank] %></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td>enrollment</td>
+						<td><%= schoolData[:enrollment] %></td>
+						<td><%= stateData[:enrollment] %></td>
+					</tr>
+					
+					<tr>
+						<td>graduation %</td>
+						<td><%= schoolData[:graduation] %></td>
+						<td><%= stateData[:graduation] %></td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<h2>API</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr>
+						<th></th>
+						<th colspan="2"><%= schoolData[:name] %></th>
+						<th colspan="2">State Average</th>
+					<tr>
+						<th>Year</th>
+						<th>Base</th>
+						<th>Growth</th>
+						<th>Base</th>
+						<th>Growth</th>
+					</tr>
+					
+					<tr>
+						<td>2007</td>
+						<td><%= if defined?(schoolData[:api][:base][:'2007']) && (schoolData[:api][:base][:'2007'] != '') then schoolData[:api][:base][:'2007'] end %></td>
+						<td>-</td>
+						<td><%= stateData[:api][:base][:'2007'] %></td>
+						<td>-</td>
+					</tr>
+					
+					<tr><td>2008</td><td><%= if defined?(schoolData[:api][:base][:'2008']) && (schoolData[:api][:base][:'2008'] != '') then schoolData[:api][:base][:'2008'] end %></td><td><%= if defined?(schoolData[:api][:growth][:'2008']) && (schoolData[:api][:growth][:'2008'] != '') then schoolData[:api][:growth][:'2008'] end %></td>
+						<td><%= stateData[:api][:base][:'2008'] %></td>
+						<td><%= stateData[:api][:growth][:'2008'] %></td>
+					</tr>
+					
+					<tr><td>2009</td><td><%= if defined?(schoolData[:api][:base][:'2009']) && (schoolData[:api][:base][:'2009'] != '') then schoolData[:api][:base][:'2009'] end %></td><td><%= if defined?(schoolData[:api][:growth][:'2009']) && (schoolData[:api][:growth][:'2009'] != '') then schoolData[:api][:growth][:'2009'] end %></td>
+						<td><%= stateData[:api][:base][:'2009'] %></td>
+						<td><%= stateData[:api][:growth][:'2009'] %></td>
+					</tr>
+					
+					<tr><td>2010</td><td><%= if defined?(schoolData[:api][:base][:'2010']) && (schoolData[:api][:base][:'2010'] != '') then schoolData[:api][:base][:'2010'] end %></td><td><%= if defined?(schoolData[:api][:growth][:'2010']) && (schoolData[:api][:growth][:'2010'] != '') then schoolData[:api][:growth][:'2010'] end %></td>
+						<td><%= stateData[:api][:base][:'2010'] %></td>
+						<td><%= stateData[:api][:growth][:'2010'] %></td>
+					</tr>
+					
+					<tr><td>2011</td><td><%= if defined?(schoolData[:api][:base][:'2011']) && (schoolData[:api][:base][:'2011'] != '') then schoolData[:api][:base][:'2011'] end %></td><td><%= if defined?(schoolData[:api][:growth][:'2011']) && (schoolData[:api][:growth][:'2011'] != '') then schoolData[:api][:growth][:'2011'] end %></td>
+						<td><%= stateData[:api][:base][:'2011'] %></td>
+						<td><%= stateData[:api][:growth][:'2011'] %></td>
+					</tr>
+					
+					<tr><td>2012</td>
+						<td><%= if defined?(schoolData[:api][:base][:'2012']) && (schoolData[:api][:base][:'2012'] != '') then schoolData[:api][:base][:'2012'] end %></td>
+						<td><%= if defined?(schoolData[:api][:growth][:'2012']) && (schoolData[:api][:growth][:'2012'] != '') then schoolData[:api][:growth][:'2012'] end %></td>
+						<td><%= stateData[:api][:base][:'2012'] %></td>
+						<td><%= stateData[:api][:growth][:'2012'] %></td>
+					</tr>
+					
+					<tr>
+						<td>2013</td>
+						<td>-</td>
+						<td><%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then schoolData[:api][:growth][:'2013'] end %></td>
+						<td>-</td>
+						<td><%= stateData[:api][:growth][:'2013'] %></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>California High School Exit Exam</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr>
+						<th></th>
+						<th colspan="4"><%= schoolData[:name] %></th>
+						<th colspan="4">State</th>
+					</tr>
+					<tr><th></th><th colspan="2">ELA</th><th colspan="2">Math</th><th colspan="2">ELA</th><th colspan="2">Math</th></tr>
+					<tr><th>Year</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th></tr>
+					<tr>
+						<td>2014</td>
+						<td><%= if defined?(schoolData[:cahsee][:ela][:'2014'][:passed]) && (schoolData[:cahsee][:ela][:'2014'][:passed] != '') then schoolData[:cahsee][:ela][:'2014'][:passed] end %></td>
+						<td><%= if defined?(schoolData[:cahsee][:ela][:'2014'][:notpassed]) && (schoolData[:cahsee][:ela][:'2014'][:notpassed] != '') then schoolData[:cahsee][:ela][:'2014'][:notpassed] end %></td>
+						<td><%= if defined?(schoolData[:cahsee][:math][:'2014'][:passed]) && (schoolData[:cahsee][:math][:'2014'][:passed] != '') then schoolData[:cahsee][:math][:'2014'][:passed] end %></td>
+						<td><%= if defined?(schoolData[:cahsee][:math][:'2014'][:notpassed]) && (schoolData[:cahsee][:math][:'2014'][:notpassed] != '') then schoolData[:cahsee][:math][:'2014'][:notpassed] end %></td>
+						<td><%= stateData[:cahsee][:ela][:'2014'][:passed] %></td>
+						<td><%= stateData[:cahsee][:ela][:'2014'][:notpassed] %></td>
+						<td><%= stateData[:cahsee][:math][:'2014'][:passed] %></td>
+						<td><%= stateData[:cahsee][:math][:'2014'][:notpassed] %></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Advanced Placement Exams</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr>
+						<th></th>
+						<th colspan="7"><%= schoolData[:name] %></th>
+						<th colspan="7">State</th>
+					</tr>
+					<tr>
+						<th>Year</th>
+						<th>11th and 12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+						<th>11th and 12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+					</tr>
+					
+					<tr>
+						<td>2011</td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:'1112enroll']) && (schoolData[:ap][:'2011'][:'1112enroll'] != '') then schoolData[:ap][:'2011'][:'1112enroll'] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:takers]) && (schoolData[:ap][:'2011'][:takers] != '') then schoolData[:ap][:'2011'][:takers] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:score1]) && (schoolData[:ap][:'2011'][:score1] != '') then schoolData[:ap][:'2011'][:score1] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:score2]) && (schoolData[:ap][:'2011'][:score2] != '') then schoolData[:ap][:'2011'][:score2] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:score3]) && (schoolData[:ap][:'2011'][:score3] != '') then schoolData[:ap][:'2011'][:score3] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:score4]) && (schoolData[:ap][:'2011'][:score4] != '') then schoolData[:ap][:'2011'][:score4] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2011'][:score5]) && (schoolData[:ap][:'2011'][:score5] != '') then schoolData[:ap][:'2011'][:score5] end %></td>
+						<td><%= stateData[:ap][:'2011'][:'1112enroll'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'takers'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'score1'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'score2'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'score3'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'score4'] %></td>
+						<td><%= stateData[:ap][:'2011'][:'score5'] %></td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:'1112enroll']) && (schoolData[:ap][:'2012'][:'1112enroll'] != '') then schoolData[:ap][:'2012'][:'1112enroll'] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:takers]) && (schoolData[:ap][:'2012'][:takers] != '') then schoolData[:ap][:'2012'][:takers] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:score1]) && (schoolData[:ap][:'2012'][:score1] != '') then schoolData[:ap][:'2012'][:score1] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:score2]) && (schoolData[:ap][:'2012'][:score2] != '') then schoolData[:ap][:'2012'][:score2] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:score3]) && (schoolData[:ap][:'2012'][:score3] != '') then schoolData[:ap][:'2012'][:score3] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:score4]) && (schoolData[:ap][:'2012'][:score4] != '') then schoolData[:ap][:'2012'][:score4] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2012'][:score5]) && (schoolData[:ap][:'2012'][:score5] != '') then schoolData[:ap][:'2012'][:score5] end %></td>
+						<td><%= stateData[:ap][:'2012'][:'1112enroll'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'takers'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'score1'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'score2'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'score3'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'score4'] %></td>
+						<td><%= stateData[:ap][:'2012'][:'score5'] %></td>
+					</tr>
+
+					<tr>
+						<td>2013</td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:'1112enroll']) && (schoolData[:ap][:'2013'][:'1112enroll'] != '') then schoolData[:ap][:'2013'][:'1112enroll'] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:takers]) && (schoolData[:ap][:'2013'][:takers] != '') then schoolData[:ap][:'2013'][:takers] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:score1]) && (schoolData[:ap][:'2013'][:score1] != '') then schoolData[:ap][:'2013'][:score1] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:score2]) && (schoolData[:ap][:'2013'][:score2] != '') then schoolData[:ap][:'2013'][:score2] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:score3]) && (schoolData[:ap][:'2013'][:score3] != '') then schoolData[:ap][:'2013'][:score3] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:score4]) && (schoolData[:ap][:'2013'][:score4] != '') then schoolData[:ap][:'2013'][:score4] end %></td>
+						<td><%= if defined?(schoolData[:ap][:'2013'][:score5]) && (schoolData[:ap][:'2013'][:score5] != '') then schoolData[:ap][:'2013'][:score5] end %></td>
+						<td><%= stateData[:ap][:'2013'][:'1112enroll'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'takers'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'score1'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'score2'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'score3'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'score4'] %></td>
+						<td><%= stateData[:ap][:'2013'][:'score5'] %></td>
+					</tr>
+	
+				</tbody>
+			</table>
+
+
+			<h2>ACT</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr>
+						<th></th>
+						<th colspan="4"><%= schoolData[:name] %></th>
+						<th colspan="4">State</th>
+					</tr>
+
+					<tr>
+						<th>Year</th>
+						<th>12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>Average</th>
+						<th>21+</th>
+						<th>12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>Average</th>
+						<th>21+</th>
+					</tr>
+					
+					<tr>
+						<td>2011</td>
+						<td><%= if defined?(schoolData[:act][:'2011'][:grade12enroll]) && (schoolData[:act][:'2011'][:grade12enroll] != '') then schoolData[:act][:'2011'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2011'][:tested]) && (schoolData[:act][:'2011'][:tested] != '') then schoolData[:act][:'2011'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2011'][:average]) && (schoolData[:act][:'2011'][:average] != '') then schoolData[:act][:'2011'][:average] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2011'][:'21plus']) && (schoolData[:act][:'2011'][:'21plus'] != '') then schoolData[:act][:'2011'][:'21plus'] end %></td>
+						<td><%= stateData[:act][:'2011'][:'grade12enroll'] %></td>
+						<td><%= stateData[:act][:'2011'][:'tested'] %></td>
+						<td><%= stateData[:act][:'2011'][:'average'] %></td>
+						<td><%= stateData[:act][:'2011'][:'21plus'] %></td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td><%= if defined?(schoolData[:act][:'2012'][:grade12enroll]) && (schoolData[:act][:'2012'][:grade12enroll] != '') then schoolData[:act][:'2012'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2012'][:tested]) && (schoolData[:act][:'2012'][:tested] != '') then schoolData[:act][:'2012'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2012'][:average]) && (schoolData[:act][:'2012'][:average] != '') then schoolData[:act][:'2012'][:average] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2012'][:'21plus']) && (schoolData[:act][:'2012'][:'21plus'] != '') then schoolData[:act][:'2012'][:'21plus'] end %></td>
+						<td><%= stateData[:act][:'2012'][:'grade12enroll'] %></td>
+						<td><%= stateData[:act][:'2012'][:'tested'] %></td>
+						<td><%= stateData[:act][:'2012'][:'average'] %></td>
+						<td><%= stateData[:act][:'2012'][:'21plus'] %></td>
+					</tr>
+
+					<tr>
+						<td>2013</td>
+						<td><%= if defined?(schoolData[:act][:'2013'][:grade12enroll]) && (schoolData[:act][:'2013'][:grade12enroll] != '') then schoolData[:act][:'2013'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2013'][:tested]) && (schoolData[:act][:'2013'][:tested] != '') then schoolData[:act][:'2013'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2013'][:average]) && (schoolData[:act][:'2013'][:average] != '') then schoolData[:act][:'2013'][:average] end %></td>
+						<td><%= if defined?(schoolData[:act][:'2013'][:'21plus']) && (schoolData[:act][:'2013'][:'21plus'] != '') then schoolData[:act][:'2013'][:'21plus'] end %></td>
+						<td><%= stateData[:act][:'2013'][:'grade12enroll'] %></td>
+						<td><%= stateData[:act][:'2013'][:'tested'] %></td>
+						<td><%= stateData[:act][:'2013'][:'average'] %></td>
+						<td><%= stateData[:act][:'2013'][:'21plus'] %></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h2>SAT</h2>
+			<table class="small-centered small-12 large-12 large-centered columns">
+				<tbody>
+					<tr>
+						<th></th>
+						<th colspan="6"><%= schoolData[:name] %></th>
+						<th colspan="6">State</th>
+					</tr>
+
+					<tr>
+						<th>Year</th>
+						<th>12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>Average Verbal</th>
+						<th>Average Math</th>
+						<th>Average Writing</th>
+						<th>1500+</th>
+						<th>12th Grade Enrollment</th>
+						<th>Takers</th>
+						<th>Average Verbal</th>
+						<th>Average Math</th>
+						<th>Average Writing</th>
+						<th>1500+</th>
+					</tr>
+					
+					<tr>
+						<td>2011</td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:grade12enroll]) && (schoolData[:sat][:'2011'][:grade12enroll] != '') then schoolData[:sat][:'2011'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:tested]) && (schoolData[:sat][:'2011'][:tested] != '') then schoolData[:sat][:'2011'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:averageV]) && (schoolData[:sat][:'2011'][:averageV] != '') then schoolData[:sat][:'2011'][:averageV] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:averageM]) && (schoolData[:sat][:'2011'][:averageM] != '') then schoolData[:sat][:'2011'][:averageM] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:averageW]) && (schoolData[:sat][:'2011'][:averageW] != '') then schoolData[:sat][:'2011'][:averageW] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2011'][:'1500plus']) && (schoolData[:sat][:'2011'][:'1500plus'] != '') then schoolData[:sat][:'2011'][:'1500plus'] end %></td>
+						<td><%= stateData[:sat][:'2011'][:'grade12enroll'] %></td>
+						<td><%= stateData[:sat][:'2011'][:'tested'] %></td>
+						<td><%= stateData[:sat][:'2011'][:'averageV'] %></td>
+						<td><%= stateData[:sat][:'2011'][:'averageM'] %></td>
+						<td><%= stateData[:sat][:'2011'][:'averageW'] %></td>
+						<td><%= stateData[:sat][:'2011'][:'1500plus'] %></td>
+					</tr>
+
+					<tr>
+						<td>2012</td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:grade12enroll]) && (schoolData[:sat][:'2012'][:grade12enroll] != '') then schoolData[:sat][:'2012'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:tested]) && (schoolData[:sat][:'2012'][:tested] != '') then schoolData[:sat][:'2012'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:averageV]) && (schoolData[:sat][:'2012'][:averageV] != '') then schoolData[:sat][:'2012'][:averageV] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:averageM]) && (schoolData[:sat][:'2012'][:averageM] != '') then schoolData[:sat][:'2012'][:averageM] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:averageW]) && (schoolData[:sat][:'2012'][:averageW] != '') then schoolData[:sat][:'2012'][:averageW] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2012'][:'1500plus']) && (schoolData[:sat][:'2012'][:'1500plus'] != '') then schoolData[:sat][:'2012'][:'1500plus'] end %></td>
+						<td><%= stateData[:sat][:'2012'][:'grade12enroll'] %></td>
+						<td><%= stateData[:sat][:'2012'][:'tested'] %></td>
+						<td><%= stateData[:sat][:'2012'][:'averageV'] %></td>
+						<td><%= stateData[:sat][:'2012'][:'averageM'] %></td>
+						<td><%= stateData[:sat][:'2012'][:'averageW'] %></td>
+						<td><%= stateData[:sat][:'2012'][:'1500plus'] %></td>
+					</tr>
+					</tr>
+					
+					<tr>
+						<td>2013</td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:grade12enroll]) && (schoolData[:sat][:'2013'][:grade12enroll] != '') then schoolData[:sat][:'2013'][:grade12enroll] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:tested]) && (schoolData[:sat][:'2013'][:tested] != '') then schoolData[:sat][:'2013'][:tested] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %></td>
+						<td><%= if defined?(schoolData[:sat][:'2013'][:'1500plus']) && (schoolData[:sat][:'2013'][:'1500plus'] != '') then schoolData[:sat][:'2013'][:'1500plus'] end %></td>
+						<td><%= stateData[:sat][:'2013'][:'grade12enroll'] %></td>
+						<td><%= stateData[:sat][:'2013'][:'tested'] %></td>
+						<td><%= stateData[:sat][:'2013'][:'averageV'] %></td>
+						<td><%= stateData[:sat][:'2013'][:'averageM'] %></td>
+						<td><%= stateData[:sat][:'2013'][:'averageW'] %></td>
+						<td><%= stateData[:sat][:'2013'][:'1500plus'] %></td>
+					</tr>
+					</tr>
+
+
+				</tbody>
+			</table>
+
+		</div>
+
+		</div>

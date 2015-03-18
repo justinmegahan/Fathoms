@@ -1,0 +1,72 @@
+<div class="row medium-uncollapse large-collapse test">
+	<div class="small-12 columns"><h2>California High School Exit Exams</h2></div>
+		<p class="small-12 column">A school's Academic Performance Index score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000.  California has set 800 as the API target for all schools to meet.</p>
+	<div class="percentage small-4 columns">
+		<h3>English-Language Arts</h3>
+		<%= if defined?(schoolData[:cahsee][:ela][:'2014'][:passed]) && (schoolData[:cahsee][:ela][:'2014'][:passed] != '') && (schoolData[:cahsee][:ela][:'2014'][:passed] != '0') && defined?(schoolData[:cahsee][:ela][:'2014'][:notpassed]) && (schoolData[:cahsee][:ela][:'2014'][:notpassed] != '' && (schoolData[:cahsee][:ela][:'2014'][:passed] != '0'))
+					then (((schoolData[:cahsee][:ela][:'2014'][:passed].to_f)/(schoolData[:cahsee][:ela][:'2014'][:notpassed].to_f + schoolData[:cahsee][:ela][:'2014'][:passed].to_f)*100).to_i) else '-'
+				end%>%
+		<p class="passed"><%= if defined?(schoolData[:cahsee][:ela][:'2014'][:passed]) && (schoolData[:cahsee][:ela][:'2014'][:passed] != '') then schoolData[:cahsee][:ela][:'2014'][:passed] 
+			end%> passed</p>
+		<p><%= if defined?(schoolData[:cahsee][:ela][:'2014'][:passed]) && (schoolData[:cahsee][:ela][:'2014'][:passed] != '') && defined?(schoolData[:cahsee][:ela][:'2014'][:notpassed]) && (schoolData[:cahsee][:ela][:'2014'][:notpassed] != '')then schoolData[:cahsee][:ela][:'2014'][:passed].to_i + schoolData[:cahsee][:ela][:'2014'][:notpassed].to_i end %> tested</p>
+		
+	</div>
+	
+	<div class="graphics small-8 columns">
+		<div class="row">
+			<div class="small-12 columns">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+				<img src="../../../images/book.png">
+			</div>
+		</div>
+	</div>
+
+<!-- <p class="stateAverage"><%= if defined?(schoolData[:cahsee][:ela][:'2014'][:passed]) && (schoolData[:cahsee][:ela][:'2014'][:passed] != '') && (schoolData[:cahsee][:ela][:'2014'][:passed] != '0') && defined?(schoolData[:cahsee][:ela][:'2014'][:notpassed]) && (schoolData[:cahsee][:ela][:'2014'][:notpassed] != '' && (schoolData[:cahsee][:ela][:'2014'][:passed] != '0')) then (((schoolData[:cahsee][:ela][:'2014'][:passed].to_f)/(schoolData[:cahsee][:ela][:'2014'][:notpassed].to_f + schoolData[:cahsee][:ela][:'2014'][:passed].to_f)*100).to_i) - (((stateData[:cahsee][:ela][:'2014'][:passed].to_f)/(stateData[:cahsee][:ela][:'2014'][:notpassed].to_f + stateData[:cahsee][:ela][:'2014'][:passed].to_f)*100).to_i) end%>% above state average</p> -->
+
+	<div class="percentage small-4 columns">
+		<h3>Math</h3>
+		<%= if defined?(schoolData[:cahsee][:math][:'2014'][:passed]) && (schoolData[:cahsee][:math][:'2014'][:passed] != '') && (schoolData[:cahsee][:math][:'2014'][:passed] != '0') && defined?(schoolData[:cahsee][:math][:'2014'][:notpassed]) && (schoolData[:cahsee][:math][:'2014'][:notpassed] != '' && (schoolData[:cahsee][:math][:'2014'][:passed] != '0'))
+					then (((schoolData[:cahsee][:math][:'2014'][:passed].to_f)/(schoolData[:cahsee][:math][:'2014'][:notpassed].to_f + schoolData[:cahsee][:math][:'2014'][:passed].to_f)*100).to_i) else '-'
+				end%>%
+		<p class="passed"><%= if defined?(schoolData[:cahsee][:math][:'2014'][:passed]) && (schoolData[:cahsee][:math][:'2014'][:passed] != '') then schoolData[:cahsee][:math][:'2014'][:passed] 
+			end%> passed</p>
+		<p><%= if defined?(schoolData[:cahsee][:math][:'2014'][:passed]) && (schoolData[:cahsee][:math][:'2014'][:passed] != '') && defined?(schoolData[:cahsee][:math][:'2014'][:notpassed]) && (schoolData[:cahsee][:math][:'2014'][:notpassed] != '')then schoolData[:cahsee][:math][:'2014'][:passed].to_i + schoolData[:cahsee][:math][:'2014'][:notpassed].to_i end %> tested</p>	
+		
+	</div>
+	
+	<div class="graphics small-8 columns">
+		<div class="row">
+			<div class="small-12 columns">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+				<img src="../../../images/calculator.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <p class="stateAverage"><%= if defined?(schoolData[:cahsee][:math][:'2014'][:passed]) && (schoolData[:cahsee][:math][:'2014'][:passed] != '') && (schoolData[:cahsee][:math][:'2014'][:passed] != '0') && defined?(schoolData[:cahsee][:math][:'2014'][:notpassed]) && (schoolData[:cahsee][:math][:'2014'][:notpassed] != '' && (schoolData[:cahsee][:math][:'2014'][:passed] != '0'))
+					then (((schoolData[:cahsee][:math][:'2014'][:passed].to_f)/(schoolData[:cahsee][:math][:'2014'][:notpassed].to_f + schoolData[:cahsee][:math][:'2014'][:passed].to_f)*100).to_i) - (((stateData[:cahsee][:math][:'2014'][:passed].to_f)/(stateData[:cahsee][:math][:'2014'][:notpassed].to_f + stateData[:cahsee][:math][:'2014'][:passed].to_f)*100).to_i)
+				end%>% above state average</p> -->

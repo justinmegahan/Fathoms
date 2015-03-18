@@ -1,0 +1,149 @@
+/*Browser reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; } body {line-height: 1; } ol, ul {list-style: none; } blockquote, q {quotes: none; } blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none; } table {border-collapse: collapse; border-spacing: 0; }
+
+/* latin-ext */
+@font-face {font-family: 'Sanchez'; font-style: normal; font-weight: 400; src: local('Sanchez'), local('Sanchez-Regular'), url(http://fonts.gstatic.com/s/sanchez/v4/npOcCrBPMuFRiujVSEMjC1KPGs1ZzpMvnHX-7fPOuAc.woff2) format('woff2'); unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {font-family: 'Sanchez'; font-style: normal; font-weight: 400; src: local('Sanchez'), local('Sanchez-Regular'), url(http://fonts.gstatic.com/s/sanchez/v4/IrRX0SbY7r3Cla3CcqtilgLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+
+body {
+	background-color: #b8e4f6;
+	font-family: 'Rockwell', 'Sanchez', serif;
+	color:white;
+}
+
+#school {
+	margin: 0 auto;
+	padding: 20px 0 20px 0;
+	width: 600px;
+}
+
+h1 {
+	padding: 10px;
+	color: white;
+	font-size: 3.5em;
+	background-color: #be858a;
+	text-align: center;
+}
+
+h2 {
+	margin: 10px 0 10px 0;
+	padding: 5px;
+	color: white;
+	font-size: 1em;
+	background-color: #be858a;
+	display: inline-block;
+}
+
+#breadcrumbs {
+	padding-bottom: 10px;
+	color: white;
+	font-size: .8em;
+	margin: 0 auto;
+}
+
+#breadcrumbs li {
+	display: inline-block;
+
+}
+
+#cahsee {
+	width:600px;
+}
+
+.api {
+	margin: 0px auto;
+	max-width: 600px;}
+
+#wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.cahseeSubject {
+	width: 600px;
+	background-color: white;
+	color: gray;
+	margin-bottom: 15px;
+}
+
+.percentage {
+	width: 260px;
+	font-size: 5em;
+	display: block;
+	float:left;
+	text-align: center;
+	padding: 10px 0;
+}
+.graphics {
+	display: block;
+	float:left;
+	width: 300px;
+	padding: 10px 0;
+}
+.calculator {
+	width: 46px;
+	height: 60px;
+	margin: 5px;
+	background-image: url("../images/calculator.png");
+	display: inline-block;
+ 	background-repeat: no-repeat;
+ 	background-position: center;
+ 	background-size: 100%;
+}
+
+.book {
+	width: 46px;
+	height: 60px;
+	margin: 5px;
+	background-image: url("../images/book.png");
+	display: inline-block;
+ 	background-repeat: no-repeat;
+ 	background-position: center;
+ 	background-size: 100%;
+}
+
+
+.percentage h3 {
+	font-size: 12pt;
+}
+
+.percentage p {
+	font-size: 16pt;
+	text-align: center;
+}
+
+.passed {
+	text-decoration:underline;
+	line-height:22px;
+}
+
+.row1 {
+	height: 170px;
+}
+
+#ap .ct-label {
+	text-align: center;
+}
+
+#satPie .ct-series.ct-series-d .ct-slice.ct-donut, #satPie .ct-series.ct-series-f .ct-slice.ct-donut, #satPie .ct-series.ct-series-b .ct-slice.ct-donut {
+	stroke: #b8e4f6;
+}
+
+.satModule {
+	width:290px;
+	float: left;
+	height:295px;
+	padding-right:10px;
+	text-align:right;
+}
+
+h3 {
+	color: #be858a;
+}
+
+#sat .score {
+	font-size: 3em;
+	padding-top:10px;
+}

@@ -1,0 +1,24 @@
+<div class="row medium-uncollapse large-collapse">
+	<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
+</div>
+<div class="row medium-uncollapse large-collapse">
+	<p class="small-12 column">A school's Academic Performance Index score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000.  California has set 800 as the API target for all schools to meet.</p>
+</div>
+<div class="row">
+	<div class="small-4 columns"></div>
+	<div class="api ct-chart ct-minor-seventh small-8 columns"></div>
+	<script>
+	new Chartist.Line('.ct-chart', {
+		labels: ['2008', '2009', '2010', '2011', '2012', '2013'],
+		series: [
+			{
+				name: '<%= schoolData[:name] %>',
+				data: [<%= if defined?(schoolData[:api][:growth][:'2008']) && (schoolData[:api][:growth][:'2008'] != '') then schoolData[:api][:growth][:'2008'] end %>, <%= if defined?(schoolData[:api][:growth][:'2009']) && (schoolData[:api][:growth][:'2009'] != '') then schoolData[:api][:growth][:'2009'] end %>, <%= if defined?(schoolData[:api][:growth][:'2010']) && (schoolData[:api][:growth][:'2010'] != '') then schoolData[:api][:growth][:'2010'] end %>, <%= if defined?(schoolData[:api][:growth][:'2011']) && (schoolData[:api][:growth][:'2011'] != '') then schoolData[:api][:growth][:'2011'] end %>, <%= if defined?(schoolData[:api][:growth][:'2012']) && (schoolData[:api][:growth][:'2012'] != '') then schoolData[:api][:growth][:'2012'] end %>, <%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then schoolData[:api][:growth][:'2013'] end %>]
+			},{
+				name: 'State Average',
+				data: [<%= if defined?(stateData[:api][:growth][:'2008']) && (stateData[:api][:growth][:'2008'] != '') then stateData[:api][:growth][:'2008'] end %>, <%= if defined?(stateData[:api][:growth][:'2009']) && (stateData[:api][:growth][:'2009'] != '') then stateData[:api][:growth][:'2009'] end %>, <%= if defined?(stateData[:api][:growth][:'2010']) && (stateData[:api][:growth][:'2010'] != '') then stateData[:api][:growth][:'2010'] end %>, <%= if defined?(stateData[:api][:growth][:'2011']) && (stateData[:api][:growth][:'2011'] != '') then stateData[:api][:growth][:'2011'] end %>, <%= if defined?(stateData[:api][:growth][:'2012']) && (stateData[:api][:growth][:'2012'] != '') then stateData[:api][:growth][:'2012'] end %>, <%= if defined?(stateData[:api][:growth][:'2013']) && (stateData[:api][:growth][:'2013'] != '') then stateData[:api][:growth][:'2013'] end %>]
+			}]
+		});
+		var $chart = $('.api');
+	</script>
+</div>
