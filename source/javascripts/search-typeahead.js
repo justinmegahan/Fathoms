@@ -50,9 +50,9 @@ $('#search .typeahead').typeahead({
 });
 
 $('#search').on('typeahead:selected', function(obj, datum, name) {      
-	window.location.href = "/elementary/" + (datum["county-url"]) + ".html";
+	window.location.href = "/high/" + (datum["county-url"]) + ".html";
 });
 
 $('#search').on('typeahead:autocompleted', function(obj, datum, name) {      
-	window.location.href = "/elementary/" + (datum["county-url"]) + ".html";
+	window.location.href = "/high/" + (datum["county-url"]) + ".html";
 });

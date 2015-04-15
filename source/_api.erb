@@ -1,12 +1,23 @@
-<div class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
-</div>
-<div class="row medium-uncollapse large-collapse">
-	<p class="small-12 column">A school's Academic Performance Index score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000.  California has set 800 as the API target for all schools to meet.</p>
-</div>
-<div class="row">
-	<div class="small-4 columns"></div>
-	<div class="api ct-chart ct-minor-seventh small-8 columns"></div>
+		<div class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<p class="score"><%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then schoolData[:api][:growth][:'2013'] end %></p>
+				<p class="scoreDetails">out of 1000</p>
+				<div>
+					<div id="apiBar1" style="width:
+						<%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') && (apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)] != '') then 100-((1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count) end %>%"></div>
+
+					<div id="apiBar2" style="width: <%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') && (apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)] != '') then ((1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count) end %>%;"></div>
+				</div>
+				<p class="scoreDetails2"><%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') && (apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)] != '') then 1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)]) end %> of <%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then apiRank.count end%><br>
+				<span class="scoreDetailsSmall">schools in California</span></p>
+				
+			</div>
+			<div class="small-12 medium-8 columns">
+				<div class="api ct-chart"></div></div>
 	<script>
 	new Chartist.Line('.ct-chart', {
 		labels: ['2008', '2009', '2010', '2011', '2012', '2013'],
@@ -20,5 +31,32 @@
 			}]
 		});
 		var $chart = $('.api');
-	</script>
-</div>
+
+				var $toolTip = $chart
+				  .append('<div class="charttooltip"></div>')
+				  .find('.charttooltip')
+				  .hide();
+
+				$chart.on('mouseenter', '.ct-point', function() {
+				  var $point = $(this),
+				    value = $point.attr('ct:value'),
+				    seriesName = $point.parent().attr('ct:series-name');
+				  $toolTip.html(seriesName + '<br>' + value).show();
+				});
+
+				$chart.on('mouseleave', '.ct-point', function() {
+				  $toolTip.hide();
+				});
+
+				$chart.on('mousemove', function(event) {
+				  $toolTip.css({
+				    left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 + 8,
+				    top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+				  });
+				 });
+			</script>
+				<div class="small-12 column">
+					<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+				</div>
+			</div>
+		</div>

@@ -1,29 +1,34 @@
----
-title: <%= schoolData[:name] %>
----	
 
     	<link href="../../../stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
-    	<link href="../../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
     	<link href="../../../stylesheets/chartist.min.css" media="screen" rel="stylesheet" type="text/css" />
+    	<link href="../../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
 
 	    <script src="../../../javascripts/chartist.js"></script>	
-	    <script src="../../../javascripts/jquery.js"></script>
+	    <script async src="../../../javascripts/jquery.js"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+		<title><%= schoolData[:name] %></title>
+
+	    <meta name="description" content="Standardized testing, Exit Exams, SAT, and AP scores for California's public scools.">
+
+	    <meta name="keywords" content="california, schools, standardized testing, api, ap, sat, exit exams">
 
     </head>
 
     <body>
-    			<%= partial 'breadcrumbs', :locals => { :stateData => stateData, :countyData => countyData, :districtData => districtData, :schoolData => schoolData} %>
-				
-    			<%= partial 'header', :locals => { :schoolData => schoolData} %>
+		<%= partial 'header', :locals => { :stateData => stateData, :countyData => countyData, :districtData => districtData, :schoolData => schoolData} %>
 
-				<%= partial 'api', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-				
-				<%= partial 'cahsee', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-				
-				<%= partial 'ap', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-				
-				<%= partial 'act', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-				
-				<%= partial 'sat', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-				
-			<!--	<%= partial 'tables', :locals => { :stateData => stateData, :countyData => countyData, :districtData => districtData, :schoolData => schoolData} %> -->
+		<%= partial 'api', :locals => { :master => master,:stateData => stateData, :schoolData => schoolData, :apiRank => apiRank} %>
+
+		<%= partial 'cahsee', :locals => { :stateData => stateData, :schoolData => schoolData} %>
+
+		<%= partial 'ap', :locals => { :stateData => stateData, :schoolData => schoolData} %>
+
+		<%= partial 'sat', :locals => { :stateData => stateData, :schoolData => schoolData} %>
+
+		<%= partial 'contact', :locals => { :stateData => stateData, :schoolData => schoolData} %>
+
+		<%= partial 'footer' %>
+	</body>
+</html>

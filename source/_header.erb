@@ -1,8 +1,18 @@
 <div class="row medium-uncollapse large-collapse">
-	<div id="title" class="small-9 columns">
-		<h1><%= schoolData[:name] %></h1>
+	<div class=" small-centered small-12 columns">
+		<p id="fathoms"><a href="../../../index.html">F</a></p>
+		<ul id="nav">
+			<li><a href="../../<%= countyData[:slug] %>.html"><%= countyData[:name] %></a></li>
+			<li>/</li>
+			<li><a href="../<%= districtData[:slug] %>.html"><%= districtData[:name] %></a></li>
+			<li>/</li>
+			<li><%= schoolData[:name] %></li>
+		</ul>
 	</div>
-	<div class="small-3 columns">
-		<p id="stateRank">4/10 state rank</p>
+</div>
+
+<div class="row medium-uncollapse large-collapse">
+	<div id="title" class="small-12 columns">
+		<h1><%= schoolData[:name] %></h1>
 	</div>
 </div>

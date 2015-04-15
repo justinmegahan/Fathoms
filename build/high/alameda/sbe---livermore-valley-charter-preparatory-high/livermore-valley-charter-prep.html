@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+ 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("451657a1b2e51689b9765c22cd2acc2c");</script><!-- end Mixpanel -->
+    
+    
+    	<link href="../../../stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
+    	<link href="../../../stylesheets/chartist.min.css" media="screen" rel="stylesheet" type="text/css" />
+    	<link href="../../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+	    <script src="../../../javascripts/chartist.js"></script>	
+	    <script async src="../../../javascripts/jquery.js"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+		<title>Livermore Valley Charter Preparatory High</title>
+
+	    <meta name="description" content="Standardized testing, Exit Exams, SAT, and AP scores for California's public scools.">
+
+	    <meta name="keywords" content="california, schools, standardized testing, api, ap, sat, exit exams">
+
+    </head>
+
+    <body>
+		<div class="row medium-uncollapse large-collapse">
+	<div class=" small-centered small-12 columns">
+		<p id="fathoms"><a href="../../../index.html">F</a></p>
+		<ul id="nav">
+			<li><a href="../../alameda.html">Alameda</a></li>
+			<li>/</li>
+			<li><a href="../sbe---livermore-valley-charter-preparatory-high.html">SBE - Livermore Valley Charter Preparatory High</a></li>
+			<li>/</li>
+			<li>Livermore Valley Charter Preparatory High</li>
+		</ul>
+	</div>
+</div>
+
+<div class="row medium-uncollapse large-collapse">
+	<div id="title" class="small-12 columns">
+		<h1>Livermore Valley Charter Preparatory High</h1>
+	</div>
+</div>
+
+				<div class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<p class="score">802</p>
+				<p class="scoreDetails">out of 1000</p>
+				<div>
+					<div id="apiBar1" style="width:
+						%"></div>
+
+					<div id="apiBar2" style="width: %;"></div>
+				</div>
+				<p class="scoreDetails2"> of 2312<br>
+				<span class="scoreDetailsSmall">schools in California</span></p>
+				
+			</div>
+			<div class="small-12 medium-8 columns">
+				<div class="api ct-chart"></div></div>
+	<script>
+	new Chartist.Line('.ct-chart', {
+		labels: ['2008', '2009', '2010', '2011', '2012', '2013'],
+		series: [
+			{
+				name: 'Livermore Valley Charter Preparatory High',
+				data: [, , , 820, 818, 802]
+			},{
+				name: 'State Average',
+				data: [742, 755, 767, 779, 788, 790]
+			}]
+		});
+		var $chart = $('.api');
+
+				var $toolTip = $chart
+				  .append('<div class="charttooltip"></div>')
+				  .find('.charttooltip')
+				  .hide();
+
+				$chart.on('mouseenter', '.ct-point', function() {
+				  var $point = $(this),
+				    value = $point.attr('ct:value'),
+				    seriesName = $point.parent().attr('ct:series-name');
+				  $toolTip.html(seriesName + '<br>' + value).show();
+				});
+
+				$chart.on('mouseleave', '.ct-point', function() {
+				  $toolTip.hide();
+				});
+
+				$chart.on('mousemove', function(event) {
+				  $toolTip.css({
+				    left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 + 8,
+				    top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+				  });
+				 });
+			</script>
+				<div class="small-12 column">
+					<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+				</div>
+			</div>
+		</div>
+
+				<div class="row">
+			<div class="small-12 columns"><h2>California High School Exit Exams</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="percentage small-12 medium-4 columns">
+				<h3>English</h3>
+				<p class="score english">84%</p>
+				<p class="scoreDetails2"><span class="passed numerator">207 passed</span><br>246 tested</p>
+				<p class="scoreDetails2 english">15% above average</p>
+			</div>
+					
+			<div class="graphics small-12 medium-8 columns">
+				<div class="row cahseeIcons">
+					<img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2 opacity" src="../../../images/book.png"><img class="infographicIcon small-2 opacity" src="../../../images/book.png">	
+				</div>
+
+			</div>
+		</div>
+			
+		<div id="cahseeMath" class="row">
+			<div class="percentage small-12 medium-4 columns">
+				<h3>Math</h3>
+				<p class="score math">90%</p>
+				<p class="scoreDetails2"><span class="passed numerator">221 passed</span><br>245 tested</p>
+				<p class="scoreDetails2 math">23% above average</p>
+			</div>
+					
+			<div class="graphics small-12 medium-8 columns">
+				<div class="row cahseeIcons">
+					<img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2 opacity" src="../../../images/calculator.png">	
+				</div>
+
+			</div>
+
+<!-- 			<div class="small-12 column">
+				<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+			</div> -->
+		</div>
+
+		
+		<div class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>Advanced Placement Tests</h2></div>
+		</div>
+		
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<p class="score">0.0</p>
+				<p class="scoreDetails2">scores of 3 or higher per student<p>
+				<p class="scoreDetails2 school">7% of students took an AP exam</span></p>
+			</div>
+			
+			<div class="small-12 medium-8 columns">
+				<div id="ap" class="ct-chart columns"></div>
+					<script>
+	var data = {
+		labels: ['1', '2', '3', '4', '5'],
+		series: [
+			[0,
+			0,
+			0,
+			0,
+			0]
+			,
+			[10.690151297643936,
+			12.76761606447848,
+			13.657096333180277,
+			10.921494588961087,
+			8.027139669170502]
+		]
+	};
+
+	var options = { seriesBarDistance: 40 };
+
+	new Chartist.Bar('#ap', data, options).on('draw', function(data) {
+		if(data.type === 'bar') {
+			data.element.attr({ style: 'stroke-width: 40px'});
+		}
+	});
+	</script>
+			</div>
+
+<!-- 			<div class="small-12 column">
+				<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+			</div> -->
+		</div>
+
+		<div id ="sat" class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>SAT Scores</h2></div>
+			<div class="small-12 medium-6 columns">
+				<p class="score">0</p>
+				<p class="scoreDetails2">1477 below state average</p>
+				<div id="satPie" class="ct-chart satModule"></div>
+				<script>
+	new Chartist.Pie('#satPie', {
+		series: [
+			0,
+			800,
+			0,
+			800,
+			0,
+			800
+			]
+	},{
+		donut: true,
+		donutWidth: 60,
+		startAngle: 270,
+		total: 2400,
+		showLabel: false
+	});
+	var $chart = $('#satPie');
+	</script>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Reading</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/book.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 english">0</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">488 below state average</p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Math</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/calculator.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 math">0</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">504 below state average</p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Writing</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/writing.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 writing">0</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">485 below state average</p>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+				<div class="row">
+			<div class="small-12 medium-6 columns">
+				<div class="row">
+					<div class="small-12 columns"><h2>Contact</h2></div>
+				</div>
+				
+				<div class="row contact"> <img class="small-2 columns" src="../../../images/website.png"> <div class="small-10 columns"> <p class="scoreDetailsSmall"><a href="http://www.lvcp.org">www.lvcp.org</a></p> </div> </div>
+
+
+				<div class="row contact">
+					<img class="small-2 columns" src="../../../images/address.png">
+					<div class="small-10 columns">
+						<p class="scoreDetailsSmall">2451 Portola Ave.<br>Livermore, CA 94551</p>
+					</div>
+				</div>
+				<div class="row contact">
+					<img class="small-2 columns" src="../../../images/phone.png">
+					<div class="small-10 columns">
+						<p class="scoreDetailsSmall">(925) 456-9000</p>
+					</div>
+				</div>
+			</div>
+			<div id ="map"class="small-12 medium-6 columns flex-video">
+				<iframe
+				  width="400"
+				  height="400"
+				  frameborder="0" style="border:0;"
+				  src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE&center=37.691041,-121.77055&zoom=16">
+				</iframe>
+				<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE"></script>
+			    <script>
+					var map;
+					function initialize() {
+					  var mapOptions = {
+					    zoom: 16,
+					    center: new google.maps.LatLng(37.691041,-121.77055)
+					  };
+					  map = new google.maps.Map(document.getElementById('map'),
+					      mapOptions);
+					}
+
+					google.maps.event.addDomListener(window, 'load', initialize);
+
+			    </script>
+
+
+			</div>
+		</div>
+
+				<footer>
+			<div class="row">
+				<div class="small-12 column">
+		    		<p class="copyright">2015 - Fathoms</p>
+		    	</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+    <!-- Google Tag Manager -->
+		<noscript>
+			<iframe src="//www.googletagmanager.com/ns.html?id=GTM-PPG8BR"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PPG8BR');</script>
+	<!-- End Google Tag Manager -->
+	
+  </body>
+</html>

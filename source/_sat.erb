@@ -1,18 +1,16 @@
 <div id ="sat" class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>SAT Scores</h2></div>
-	<div class="satModule small-6 columns">
-		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %></p>
-		<h3>Verbal</h3>
-		<p><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV].to_i - stateData[:sat][:'2013'][:averageV].to_i end %> above state average</p>
-		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %></p>
-		<h3>Math</h3>
-		<p><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM].to_i - stateData[:sat][:'2013'][:averageM].to_i end %> above state average</p>
-		<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %></p>
-		<h3>Writing</h3>
-		<p><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW].to_i - stateData[:sat][:'2013'][:averageW].to_i end %> above state average</p>
-	</div>
-	<div id="satPie" class="ct-chart satModule small-6 columns"></div>
-	<script>
+			<div class="small-12 columns"><h2>SAT Scores</h2></div>
+			<div class="small-12 medium-6 columns">
+				<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i end %></p>
+				<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') 
+					then (differential = (schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i - ( stateData[:sat][:'2013'][:averageV].to_i + stateData[:sat][:'2013'][:averageM].to_i + stateData[:sat][:'2013'][:averageW].to_i)))
+						if (differential > 0) then (differential.to_s + ' above state average')
+						elsif differential == 0 then 'At state average'
+						else  (differential*-1).to_s + ' below state average'
+						end
+					end %></p>
+				<div id="satPie" class="ct-chart satModule"></div>
+				<script>
 	new Chartist.Pie('#satPie', {
 		series: [
 			<%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %>,
@@ -31,4 +29,62 @@
 	});
 	var $chart = $('#satPie');
 	</script>
-</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Reading</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/book.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 english"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %></p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then differential = schoolData[:sat][:'2013'][:averageV].to_i - stateData[:sat][:'2013'][:averageV].to_i
+								if differential > 0 then differential.to_s + ' above state average'
+								elsif differential == 0 then 'At state average'
+								else (differential*-1).to_s + ' below state average'
+							end
+						end %></p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Math</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/calculator.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 math"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %></p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then differential = schoolData[:sat][:'2013'][:averageM].to_i - stateData[:sat][:'2013'][:averageM].to_i
+								if differential > 0 then differential.to_s + ' above state average'
+								elsif differential == 0 then 'At state average'
+								else (differential*-1).to_s + ' below state average'
+							end
+						end %></p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Writing</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/writing.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 writing"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %></p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then differential = schoolData[:sat][:'2013'][:averageW].to_i - stateData[:sat][:'2013'][:averageW].to_i
+								if differential > 0 then differential.to_s + ' above state average'
+								elsif differential == 0 then 'At state average'
+								else (differential*-1).to_s + ' below state average'
+							end
+						end %></p>
+					</div>	
+				</div>
+			</div>
+		</div>

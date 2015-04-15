@@ -13,45 +13,64 @@
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
 mixpanel.init("451657a1b2e51689b9765c22cd2acc2c");</script><!-- end Mixpanel -->
     
-        	<link href="../../../stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
-    	<link href="../../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    	<link href="../../../stylesheets/foundation.min.css" media="screen" rel="stylesheet" type="text/css" />
     	<link href="../../../stylesheets/chartist.min.css" media="screen" rel="stylesheet" type="text/css" />
+    	<link href="../../../stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
 
 	    <script src="../../../javascripts/chartist.js"></script>	
-	    <script src="../../../javascripts/jquery.js"></script>
+	    <script async src="../../../javascripts/jquery.js"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+		<title>Envision Academy for Arts & Technology</title>
+
+	    <meta name="description" content="Standardized testing, Exit Exams, SAT, and AP scores for California's public scools.">
+
+	    <meta name="keywords" content="california, schools, standardized testing, api, ap, sat, exit exams">
 
     </head>
 
     <body>
-    			<div class="row medium-uncollapse large-collapse">
+		<div class="row medium-uncollapse large-collapse">
 	<div class=" small-centered small-12 columns">
-		<ul class="breadcrumbs">
-			<li><a href="../../../index.html">Fathoms</a></li>
+		<p id="fathoms"><a href="../../../index.html">F</a></p>
+		<ul id="nav">
 			<li><a href="../../alameda.html">Alameda</a></li>
+			<li>/</li>
 			<li><a href="../alameda-county-office-of-education.html">Alameda County Office of Education</a></li>
-			<li><a href="#">Envision Academy for Arts & Technology</a></li>
+			<li>/</li>
+			<li>Envision Academy for Arts & Technology</li>
 		</ul>
 	</div>
 </div>
-				
-    			<div class="row medium-uncollapse large-collapse">
-	<div id="title" class="small-9 columns">
+
+<div class="row medium-uncollapse large-collapse">
+	<div id="title" class="small-12 columns">
 		<h1>Envision Academy for Arts & Technology</h1>
-	</div>
-	<div class="small-3 columns">
-		<p id="stateRank">4/10 state rank</p>
 	</div>
 </div>
 
 				<div class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
-</div>
-<div class="row medium-uncollapse large-collapse">
-	<p class="small-12 column">A school's Academic Performance Index score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000.  California has set 800 as the API target for all schools to meet.</p>
-</div>
-<div class="row">
-	<div class="small-4 columns"></div>
-	<div class="api ct-chart ct-minor-seventh small-8 columns"></div>
+			<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<p class="score">669</p>
+				<p class="scoreDetails">out of 1000</p>
+				<div>
+					<div id="apiBar1" style="width:
+						%"></div>
+
+					<div id="apiBar2" style="width: %;"></div>
+				</div>
+				<p class="scoreDetails2"> of 2312<br>
+				<span class="scoreDetailsSmall">schools in California</span></p>
+				
+			</div>
+			<div class="small-12 medium-8 columns">
+				<div class="api ct-chart"></div></div>
 	<script>
 	new Chartist.Line('.ct-chart', {
 		labels: ['2008', '2009', '2010', '2011', '2012', '2013'],
@@ -65,79 +84,91 @@ mixpanel.init("451657a1b2e51689b9765c22cd2acc2c");</script><!-- end Mixpanel -->
 			}]
 		});
 		var $chart = $('.api');
-	</script>
-</div>
-				
-				<div class="row medium-uncollapse large-collapse test">
-	<div class="small-12 columns"><h2>California High School Exit Exams</h2></div>
-		<p class="small-12 column">A school's Academic Performance Index score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000.  California has set 800 as the API target for all schools to meet.</p>
-	<div class="percentage small-4 columns">
-		<h3>English-Language Arts</h3>
-		73%
-		<p class="passed">192 passed</p>
-		<p>260 tested</p>
-		
-	</div>
-	
-	<div class="graphics small-8 columns">
-		<div class="row">
-			<div class="small-12 columns">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-12 columns">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-				<img src="../../../images/book.png">
-			</div>
-		</div>
-	</div>
 
-<!-- <p class="stateAverage">4% above state average</p> -->
+				var $toolTip = $chart
+				  .append('<div class="charttooltip"></div>')
+				  .find('.charttooltip')
+				  .hide();
 
-	<div class="percentage small-4 columns">
-		<h3>Math</h3>
-		75%
-		<p class="passed">170 passed</p>
-		<p>226 tested</p>	
+				$chart.on('mouseenter', '.ct-point', function() {
+				  var $point = $(this),
+				    value = $point.attr('ct:value'),
+				    seriesName = $point.parent().attr('ct:series-name');
+				  $toolTip.html(seriesName + '<br>' + value).show();
+				});
+
+				$chart.on('mouseleave', '.ct-point', function() {
+				  $toolTip.hide();
+				});
+
+				$chart.on('mousemove', function(event) {
+				  $toolTip.css({
+				    left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 + 8,
+				    top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+				  });
+				 });
+			</script>
+				<div class="small-12 column">
+					<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+				</div>
+			</div>
+		</div>
+
+				<div class="row">
+			<div class="small-12 columns"><h2>California High School Exit Exams</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="percentage small-12 medium-4 columns">
+				<h3>English</h3>
+				<p class="score english">73%</p>
+				<p class="scoreDetails2"><span class="passed numerator">192 passed</span><br>260 tested</p>
+				<p class="scoreDetails2 english">4% above average</p>
+			</div>
+					
+			<div class="graphics small-12 medium-8 columns">
+				<div class="row cahseeIcons">
+					<img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2" src="../../../images/book.png"><img class="infographicIcon small-2 opacity" src="../../../images/book.png"><img class="infographicIcon small-2 opacity" src="../../../images/book.png"><img class="infographicIcon small-2 opacity" src="../../../images/book.png">	
+				</div>
+
+			</div>
+		</div>
+			
+		<div id="cahseeMath" class="row">
+			<div class="percentage small-12 medium-4 columns">
+				<h3>Math</h3>
+				<p class="score math">75%</p>
+				<p class="scoreDetails2"><span class="passed numerator">170 passed</span><br>226 tested</p>
+				<p class="scoreDetails2 math">8% above average</p>
+			</div>
+					
+			<div class="graphics small-12 medium-8 columns">
+				<div class="row cahseeIcons">
+					<img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2" src="../../../images/calculator.png"><img class="infographicIcon small-2 opacity" src="../../../images/calculator.png"><img class="infographicIcon small-2 opacity" src="../../../images/calculator.png"><img class="infographicIcon small-2 opacity" src="../../../images/calculator.png">	
+				</div>
+
+			</div>
+
+<!-- 			<div class="small-12 column">
+				<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+			</div> -->
+		</div>
+
 		
-	</div>
-	
-	<div class="graphics small-8 columns">
-		<div class="row">
-			<div class="small-12 columns">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-			</div>
+		<div class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>Advanced Placement Tests</h2></div>
 		</div>
+		
 		<div class="row">
-			<div class="small-12 columns">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
-				<img src="../../../images/calculator.png">
+			<div class="small-12 medium-4 columns">
+				<p class="score">0.01</p>
+				<p class="scoreDetails2">scores of 3 or higher per student<p>
+				<p class="scoreDetails2 school">33% of students took an AP exam</span></p>
 			</div>
-		</div>
-	</div>
-</div>
-<!-- <p class="stateAverage">8% above state average</p> -->
-				
-				<div class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>Advanced Placement Scores</h2></div>
-	<div class="small-4 columns">Some information</div>
-	<div id="ap" class="ct-chart ct-minor-seventh small-8 columns"></div>
-	<script>
+			
+			<div class="small-12 medium-8 columns">
+				<div id="ap" class="ct-chart columns"></div>
+					<script>
 	var data = {
 		labels: ['1', '2', '3', '4', '5'],
 		series: [
@@ -163,27 +194,20 @@ mixpanel.init("451657a1b2e51689b9765c22cd2acc2c");</script><!-- end Mixpanel -->
 		}
 	});
 	</script>
-	<p>x% of 11th and 12th graders took an AP exam</p>
-</div>
-				
-				<!-- <h2>ACT Scores</h2>
-<p>Not sure how to do these yet</p> -->
-				
-				<div id ="sat" class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>SAT Scores</h2></div>
-	<div class="satModule small-6 columns">
-		<p class="score">392</p>
-		<h3>Verbal</h3>
-		<p>-96 above state average</p>
-		<p class="score">388</p>
-		<h3>Math</h3>
-		<p>-116 above state average</p>
-		<p class="score">397</p>
-		<h3>Writing</h3>
-		<p>-88 above state average</p>
-	</div>
-	<div id="satPie" class="ct-chart satModule small-6 columns"></div>
-	<script>
+			</div>
+
+<!-- 			<div class="small-12 column">
+				<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+			</div> -->
+		</div>
+
+		<div id ="sat" class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>SAT Scores</h2></div>
+			<div class="small-12 medium-6 columns">
+				<p class="score">1177</p>
+				<p class="scoreDetails2">300 below state average</p>
+				<div id="satPie" class="ct-chart satModule"></div>
+				<script>
 	new Chartist.Pie('#satPie', {
 		series: [
 			392,
@@ -202,348 +226,109 @@ mixpanel.init("451657a1b2e51689b9765c22cd2acc2c");</script><!-- end Mixpanel -->
 	});
 	var $chart = $('#satPie');
 	</script>
-</div>
-				
-			<!--	<h1>Envision Academy for Arts & Technology</h1>
-<table class="small-centered small-12 large-12 large-centered columns">
-	<tbody>
-		<tr>
-						<th></th>
-						<th>Envision Academy for Arts & Technology
-						</th><th>State Average</th>
-					</tr>
-
-					<tr>
-						<td>State Rank</td>
-						<td>2</td>
-						<td></td>
-					</tr>
-					
-					<tr>
-						<td>enrollment</td>
-						<td>343</td>
-						<td>826</td>
-					</tr>
-					
-					<tr>
-						<td>graduation %</td>
-						<td>70.3</td>
-						<td>80.4</td>
-					</tr>
-
-				</tbody>
-			</table>
-
-			<h2>API</h2>
-			<table class="small-centered small-12 large-12 large-centered columns">
-				<tbody>
-					<tr>
-						<th></th>
-						<th colspan="2">Envision Academy for Arts & Technology</th>
-						<th colspan="2">State Average</th>
-					<tr>
-						<th>Year</th>
-						<th>Base</th>
-						<th>Growth</th>
-						<th>Base</th>
-						<th>Growth</th>
-					</tr>
-					
-					<tr>
-						<td>2007</td>
-						<td>516</td>
-						<td>-</td>
-						<td>728</td>
-						<td>-</td>
-					</tr>
-					
-					<tr><td>2008</td><td>518</td><td>517</td>
-						<td>741</td>
-						<td>742</td>
-					</tr>
-					
-					<tr><td>2009</td><td>603</td><td>597</td>
-						<td>754</td>
-						<td>755</td>
-					</tr>
-					
-					<tr><td>2010</td><td>602</td><td>604</td>
-						<td>768</td>
-						<td>767</td>
-					</tr>
-					
-					<tr><td>2011</td><td>641</td><td>643</td>
-						<td>778</td>
-						<td>779</td>
-					</tr>
-					
-					<tr><td>2012</td>
-						<td>605</td>
-						<td>605</td>
-						<td>791</td>
-						<td>788</td>
-					</tr>
-					
-					<tr>
-						<td>2013</td>
-						<td>-</td>
-						<td>669</td>
-						<td>-</td>
-						<td>790</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h2>California High School Exit Exam</h2>
-			<table class="small-centered small-12 large-12 large-centered columns">
-				<tbody>
-					<tr>
-						<th></th>
-						<th colspan="4">Envision Academy for Arts & Technology</th>
-						<th colspan="4">State</th>
-					</tr>
-					<tr><th></th><th colspan="2">ELA</th><th colspan="2">Math</th><th colspan="2">ELA</th><th colspan="2">Math</th></tr>
-					<tr><th>Year</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th><th>Passed</th><th>Failed</th></tr>
-					<tr>
-						<td>2014</td>
-						<td>192</td>
-						<td>68</td>
-						<td>170</td>
-						<td>56</td>
-						<td>906405</td>
-						<td>392898</td>
-						<td>901579</td>
-						<td>435481</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<h2>Advanced Placement Exams</h2>
-			<table class="small-centered small-12 large-12 large-centered columns">
-				<tbody>
-					<tr>
-						<th></th>
-						<th colspan="7">Envision Academy for Arts & Technology</th>
-						<th colspan="7">State</th>
-					</tr>
-					<tr>
-						<th>Year</th>
-						<th>11th and 12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>1</th>
-						<th>2</th>
-						<th>3</th>
-						<th>4</th>
-						<th>5</th>
-						<th>11th and 12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>1</th>
-						<th>2</th>
-						<th>3</th>
-						<th>4</th>
-						<th>5</th>
-					</tr>
-					
-					<tr>
-						<td>2011</td>
-						<td>101</td>
-						<td>43</td>
-						<td>45</td>
-						<td>1</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>954499</td>
-						<td>262597</td>
-						<td>96947</td>
-						<td>103166</td>
-						<td>113904</td>
-						<td>94087</td>
-						<td>72535</td>
-					</tr>
-
-					<tr>
-						<td>2012</td>
-						<td>146</td>
-						<td>88</td>
-						<td>88</td>
-						<td>2</td>
-						<td>0</td>
-						<td>0</td>
-						<td>0</td>
-						<td>963101</td>
-						<td>281408</td>
-						<td>100533</td>
-						<td>111514</td>
-						<td>122844</td>
-						<td>102295</td>
-						<td>81034</td>
-					</tr>
-
-					<tr>
-						<td>2013</td>
-						<td>116</td>
-						<td>39</td>
-						<td>37</td>
-						<td>1</td>
-						<td>0</td>
-						<td>1</td>
-						<td>0</td>
-						<td>964787</td>
-						<td>298669</td>
-						<td>106327</td>
-						<td>126990</td>
-						<td>135837</td>
-						<td>108628</td>
-						<td>79840</td>
-					</tr>
-	
-				</tbody>
-			</table>
-
-
-			<h2>ACT</h2>
-			<table class="small-centered small-12 large-12 large-centered columns">
-				<tbody>
-					<tr>
-						<th></th>
-						<th colspan="4">Envision Academy for Arts & Technology</th>
-						<th colspan="4">State</th>
-					</tr>
-
-					<tr>
-						<th>Year</th>
-						<th>12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>Average</th>
-						<th>21+</th>
-						<th>12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>Average</th>
-						<th>21+</th>
-					</tr>
-					
-					<tr>
-						<td>2011</td>
-						<td>38</td>
-						<td>15</td>
-						<td>16</td>
-						<td>1</td>
-						<td>486549</td>
-						<td>82495</td>
-						<td>21.73</td>
-						<td>46577</td>
-					</tr>
-
-					<tr>
-						<td>2012</td>
-						<td>59</td>
-						<td>40</td>
-						<td>15.35</td>
-						<td>2</td>
-						<td>493947</td>
-						<td>87016</td>
-						<td>21.81</td>
-						<td>49321</td>
-					</tr>
-
-					<tr>
-						<td>2013</td>
-						<td>59</td>
-						<td>31</td>
-						<td>15</td>
-						<td>2</td>
-						<td>496859</td>
-						<td>90986</td>
-						<td>21.87</td>
-						<td>51821</td>
-					</tr>
-				</tbody>
-			</table>
-
-
-			<h2>SAT</h2>
-			<table class="small-centered small-12 large-12 large-centered columns">
-				<tbody>
-					<tr>
-						<th></th>
-						<th colspan="6">Envision Academy for Arts & Technology</th>
-						<th colspan="6">State</th>
-					</tr>
-
-					<tr>
-						<th>Year</th>
-						<th>12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>Average Verbal</th>
-						<th>Average Math</th>
-						<th>Average Writing</th>
-						<th>1500+</th>
-						<th>12th Grade Enrollment</th>
-						<th>Takers</th>
-						<th>Average Verbal</th>
-						<th>Average Math</th>
-						<th>Average Writing</th>
-						<th>1500+</th>
-					</tr>
-					
-					<tr>
-						<td>2011</td>
-						<td>38</td>
-						<td>35</td>
-						<td>381</td>
-						<td>372</td>
-						<td>381</td>
-						<td>2</td>
-						<td>486549</td>
-						<td>184627</td>
-						<td>491</td>
-						<td>510</td>
-						<td>491</td>
-						<td>88647</td>
-					</tr>
-
-					<tr>
-						<td>2012</td>
-						<td>59</td>
-						<td>47</td>
-						<td>368</td>
-						<td>381</td>
-						<td>383</td>
-						<td>3</td>
-						<td>485654</td>
-						<td>189867</td>
-						<td>487</td>
-						<td>506</td>
-						<td>487</td>
-						<td>87438</td>
-					</tr>
-					</tr>
-					
-					<tr>
-						<td>2013</td>
-						<td>59</td>
-						<td>50</td>
-						<td>392</td>
-						<td>388</td>
-						<td>397</td>
-						<td>6</td>
-						<td>474955</td>
-						<td>190233</td>
-						<td>488</td>
-						<td>504</td>
-						<td>485</td>
-						<td>86911</td>
-					</tr>
-					</tr>
-
-
-				</tbody>
-			</table>
-
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Reading</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/book.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 english">392</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">96 below state average</p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Math</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/calculator.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 math">388</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">116 below state average</p>
+					</div>	
+				</div>
+			</div>
+			<div class="satModule small-12 medium-6 columns">
+				<h3>Writing</h3>
+				<div class="row">
+					<div class="small-2 columns">
+						<img src="../../../images/writing.png">
+					</div>
+					<div class="small-4 columns">
+						<p class="score2 writing">397</p>
+					</div>
+					<div class="small-6 columns">
+						<p class="scoreDetails2">88 below state average</p>
+					</div>	
+				</div>
+			</div>
 		</div>
 
-		</div> -->
+				<div class="row">
+			<div class="small-12 medium-6 columns">
+				<div class="row">
+					<div class="small-12 columns"><h2>Contact</h2></div>
+				</div>
+				
+				<div class="row contact"> <img class="small-2 columns" src="../../../images/website.png"> <div class="small-10 columns"> <p class="scoreDetailsSmall"><a href="http://www.envisionacademy.org/">www.envisionacademy.org/</a></p> </div> </div>
+
+
+				<div class="row contact">
+					<img class="small-2 columns" src="../../../images/address.png">
+					<div class="small-10 columns">
+						<p class="scoreDetailsSmall">1515 Webster St.<br>Oakland, CA 94612</p>
+					</div>
+				</div>
+				<div class="row contact">
+					<img class="small-2 columns" src="../../../images/phone.png">
+					<div class="small-10 columns">
+						<p class="scoreDetailsSmall">(510) 596-8901</p>
+					</div>
+				</div>
+			</div>
+			<div id ="map"class="small-12 medium-6 columns flex-video">
+				<iframe
+				  width="400"
+				  height="400"
+				  frameborder="0" style="border:0;"
+				  src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE&center=37.80452,-122.26815&zoom=16">
+				</iframe>
+				<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_ixNhdFtsTVSGcE0Yt4fZ_sCOvEUcGFE"></script>
+			    <script>
+					var map;
+					function initialize() {
+					  var mapOptions = {
+					    zoom: 16,
+					    center: new google.maps.LatLng(37.80452,-122.26815)
+					  };
+					  map = new google.maps.Map(document.getElementById('map'),
+					      mapOptions);
+					}
+
+					google.maps.event.addDomListener(window, 'load', initialize);
+
+			    </script>
+
+
+			</div>
+		</div>
+
+				<footer>
+			<div class="row">
+				<div class="small-12 column">
+		    		<p class="copyright">2015 - Fathoms</p>
+		    	</div>
+			</div>
+		</footer>
+	</body>
+</html>
 
     <!-- Google Tag Manager -->
 		<noscript>

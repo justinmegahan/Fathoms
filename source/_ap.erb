@@ -1,8 +1,18 @@
-<div class="row medium-uncollapse large-collapse">
-	<div class="small-12 columns"><h2>Advanced Placement Scores</h2></div>
-	<div class="small-4 columns">Some information</div>
-	<div id="ap" class="ct-chart ct-minor-seventh small-8 columns"></div>
-	<script>
+
+		<div class="row medium-uncollapse large-collapse">
+			<div class="small-12 columns"><h2>Advanced Placement Tests</h2></div>
+		</div>
+		
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<p class="score"><%= if defined?(schoolData[:ap][:'2013'][:score3]) && (schoolData[:ap][:'2013'][:score3] != '') then ((schoolData[:ap][:'2013'][:score3].to_i + schoolData[:ap][:'2013'][:score4].to_i + schoolData[:ap][:'2013'][:score5].to_i)/(schoolData[:ap][:'2013'][:'1112enroll'].to_f)).round(2) end %></p>
+				<p class="scoreDetails2">scores of 3 or higher per student<p>
+				<p class="scoreDetails2 school"><%= if defined?(schoolData[:ap][:'2013'][:score3]) && (schoolData[:ap][:'2013'][:score3] != '') && (schoolData[:ap][:'2013'][:takers] != '0') then ((((schoolData[:ap][:'2013'][:takers].to_f)/(schoolData[:ap][:'2013'][:'1112enroll'].to_f))*100).to_i) else 0 end %>% of students took an AP exam</span></p>
+			</div>
+			
+			<div class="small-12 medium-8 columns">
+				<div id="ap" class="ct-chart columns"></div>
+					<script>
 	var data = {
 		labels: ['1', '2', '3', '4', '5'],
 		series: [
@@ -28,5 +38,9 @@
 		}
 	});
 	</script>
-	<p>x% of 11th and 12th graders took an AP exam</p>
-</div>
+			</div>
+
+<!-- 			<div class="small-12 column">
+				<p class="description">API score is a composite number measuring academic performance and growth on statewide assessments. Standardized Reporting and Testing (STAR) and the California High School Exit Examination. API ranges in scale from 200 to 1,000. California has set 800 as the API target for all schools to meet.</p>
+			</div> -->
+		</div>

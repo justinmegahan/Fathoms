@@ -1,6 +1,6 @@
 body {
 	background-color: #b8e4f6;
-	font-family: 'Rockwell', 'Sanchez', serif;
+	font-family: 'Rockwell', 'Roboto Slab', serif;
 	color:white;
 }
 
@@ -10,49 +10,250 @@ body {
 	 margin-top: 0.2rem;
 }
 
-.calculator, .book {
-	width: 46px;
-	height: 60px;
-	margin: 5px;
-	background-image: url("../images/calculator.png");
-	display: inline-block;
- 	background-repeat: no-repeat;
- 	background-position: center;
- 	background-size: 100%;
-}
-
-.book {
-	background-image: url("../images/book.png");
-}
-
-.calculator {
-	background-image: url("../images/calculator.png");
-}
 
 h1 {
 	padding: 10px;
 	color: white;
-	font-size: 3.5em;
-	background-color: #be858a;
+	font-size: 4.5em;
+	background-color: lightcoral;
 	text-align: center;
-	font-family: 'Rockwell', 'Sanchez', serif;
-}
+	margin-bottom: 5px;
+	font-family: 'Rockwell', 'Roboto Slab', serif;
 
-/*#title {
-	padding-right:0;
-}*/
+}
 
 h2 {
 	color: white;
-/*	margin-left: 0.9375rem;
-	margin-right: 0.9375rem;*/
-	padding: 10px;
-	background-color: #be858a;
-	font-family: 'Rockwell', 'Sanchez', serif;
+	padding: 5px 10px;
+	margin: 50px 0 25px 0;
+	background-color: #808080;
 	display: inline-block;
+	font-size: 1.5em;
+	font-family: 'Rockwell', 'Roboto Slab', serif;
 }
 
 h3 {
-	font-family: 'Rockwell', 'Sanchez', serif;
 	color:white;
+	font-family: 'Rockwell', 'Roboto Slab', serif;
+}
+
+.score, .score2 {
+  line-height: 7rem;
+  color: lightcoral;
+  font-weight: bold;
+  margin-bottom:10px;
+  letter-spacing: -3px;
+}
+
+.score {
+  font-size: 10rem;
+}
+
+.score2 {
+	font-size:5.5rem;
+	line-height: .75em;
+	text-align: center;
+}
+
+.scoreDetails, h3 {
+	text-transform: uppercase;
+	color: #808080;
+	padding-left:5px;
+	font-size:2rem;
+	line-height:1em;
+}
+
+.scoreDetails2 {
+	color: #808080;
+	padding-left:5px;
+	font-size:2rem;
+	line-height:1em;
+}
+
+.scoreDetailsSmall {
+	color: #808080;
+	font-size:1.5rem;
+	text-transform: none;
+}
+
+.rank {
+  font-size: 2rem;
+  margin-bottom:0;
+  text-align:center;
+}
+
+#nav li {
+	display: inline;
+}
+#nav li a {
+	color: lightcoral;
+	font-weight: bold;
+	padding:0 5px;
+}
+
+#nav {
+	float: left;
+	margin-top:25px;
+	background-color: #F1F1F2;
+	margin-left:0;
+	padding:5px 15px 5px 5px;
+	color: lightcoral;
+	font-weight: bold;
+
+}
+
+#fathoms {
+	background-color: lightcoral;
+	float: left;
+	padding:5px 12px;
+	margin-top: 25px
+}
+
+#fathoms a {
+	color:#F1F1F2;
+	font-weight: bold;
+}
+
+.api, #ap {
+	height:300px;
+}
+
+#satPie {
+	height:300px;
+	width: 300px;
+}
+
+#apiBar1, #apiBar2 {
+	height:27px;
+	float: left;
+	margin: 10px 0 10px 0;
+}
+
+#apiBar1 {
+	background-color: lightcoral;
+}
+
+#apiBar2 {
+	background-color: #D7B5B9;
+}
+
+.charttooltip{opacity:.75;position:absolute;display:inline-block;min-width:5em;padding:.5em;background:white;color:#453D3F;font-weight:700;text-align:center;pointer-events:none;z-index:1}.charttooltip:after{content:"";position:absolute;top:100%;left:50%;width:0;height:0;margin-left:-15px;border:15px solid transparent;border-top-color:white}
+
+
+.description {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.25em;
+	color: #808080;
+	margin-top:25px;
+}
+
+.opacity {
+	opacity: .1;
+}
+
+.math {
+	color: #7AA272;
+}
+
+.ct-chart .ct-series.ct-series-e .ct-slice.ct-donut, .ct-chart .ct-series.ct-series-f .ct-slice.ct-donut {
+  stroke: #7AA272;
+}
+
+.english {
+	color: #D6AF32;
+}
+
+.ct-chart .ct-series.ct-series-a .ct-slice.ct-donut, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
+  stroke: #D6AF32;
+}
+
+.writing {
+	color: #979FD0;
+}
+
+.ct-chart .ct-series.ct-series-c .ct-slice.ct-donut, .ct-chart .ct-series.ct-series-d .ct-slice.ct-donut {
+  stroke: #979FD0;
+}
+
+.school {
+	color:lightcoral;
+}
+
+.ct-series-b .ct-slice.ct-donut, .ct-series-d .ct-slice.ct-donut, .ct-series-f .ct-slice.ct-donut {
+	opacity: .5;
+}
+
+#cahseeMath {
+	margin-top:50px;
+}
+
+.numerator {
+	border-bottom: 3px solid #808080;
+	line-height: 1.5em;
+	padding-bottom: 2px;
+}
+
+.infographicIcon {
+	padding: 8px 5px;
+}
+
+.contact {
+	padding-bottom: 25px;
+}
+
+.contact p {
+	line-height: 1.6em;
+}
+
+.contact a {
+	color: inherit;
+}
+
+.contact img {
+	width: 70px;
+}
+
+.satModule {
+	margin-bottom: 15px;
+}
+
+footer {
+	background-color: #60ABCC;
+	height: 50px;
+	text-align: center;
+}
+
+footer p {
+	padding:10px 0 0 0;
+	margin: 0;
+}
+
+#map {
+	padding-bottom: 34.5%;
+	margin-top:25px;
+}
+
+.cahseeIcons {
+  text-align: center;
+}
+.cahseeIcons img:nth-child(1),.cahseeIcons img:nth-child(5) {
+	margin-left: 1px !important
+}
+
+table tr th, table tr td, table tr td a {
+	font-size: 24px;
+	  line-height: 30px;
+}
+
+table tr td, table tr th {
+	padding: 10px 20px;
+}
+
+table {
+	margin-top: 50px;
+	width:100%;
+}
+
+.apiTableData {
+	text-align: center;
 }
