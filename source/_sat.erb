@@ -1,24 +1,26 @@
+<% if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') 
+	then %>
+
 <div id ="sat" class="row medium-uncollapse large-collapse">
 			<div class="small-12 columns"><h2>SAT Scores</h2></div>
 			<div class="small-12 medium-6 columns">
-				<p class="score"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i end %></p>
-				<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') 
-					then (differential = (schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i - ( stateData[:sat][:'2013'][:averageV].to_i + stateData[:sat][:'2013'][:averageM].to_i + stateData[:sat][:'2013'][:averageW].to_i)))
+				<p class="score"><%= schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i %></p>
+				<p class="scoreDetails2"><%= (differential = (schoolData[:sat][:'2013'][:averageV].to_i + schoolData[:sat][:'2013'][:averageM].to_i + schoolData[:sat][:'2013'][:averageW].to_i - ( stateData[:sat][:'2013'][:averageV].to_i + stateData[:sat][:'2013'][:averageM].to_i + stateData[:sat][:'2013'][:averageW].to_i)))
 						if (differential > 0) then (differential.to_s + ' above state average')
 						elsif differential == 0 then 'At state average'
 						else  (differential*-1).to_s + ' below state average'
 						end
-					end %></p>
+					%></p>
 				<div id="satPie" class="ct-chart satModule"></div>
 				<script>
 	new Chartist.Pie('#satPie', {
 		series: [
-			<%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %>,
-			<%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then 800-(schoolData[:sat][:'2013'][:averageV].to_i) end %>,
-			<%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %>,
-			<%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then 800-(schoolData[:sat][:'2013'][:averageM].to_i) end %>,
-			<%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %>,
-			<%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then 800-(schoolData[:sat][:'2013'][:averageW].to_i) end %>
+			<%= schoolData[:sat][:'2013'][:averageV] %>,
+			<%= 800-(schoolData[:sat][:'2013'][:averageV].to_i) %>,
+			<%= schoolData[:sat][:'2013'][:averageM] %>,
+			<%= 800-(schoolData[:sat][:'2013'][:averageM].to_i) %>,
+			<%= schoolData[:sat][:'2013'][:averageW] %>,
+			<%= 800-(schoolData[:sat][:'2013'][:averageW].to_i) %>
 			]
 	},{
 		donut: true,
@@ -37,15 +39,14 @@
 						<img src="../../../images/book.png">
 					</div>
 					<div class="small-4 columns">
-						<p class="score2 english"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then schoolData[:sat][:'2013'][:averageV] end %></p>
+						<p class="score2 english"><%= schoolData[:sat][:'2013'][:averageV] %></p>
 					</div>
 					<div class="small-6 columns">
-						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageV]) && (schoolData[:sat][:'2013'][:averageV] != '') then differential = schoolData[:sat][:'2013'][:averageV].to_i - stateData[:sat][:'2013'][:averageV].to_i
+						<p class="scoreDetails2"><%= differential = schoolData[:sat][:'2013'][:averageV].to_i - stateData[:sat][:'2013'][:averageV].to_i
 								if differential > 0 then differential.to_s + ' above state average'
 								elsif differential == 0 then 'At state average'
 								else (differential*-1).to_s + ' below state average'
-							end
-						end %></p>
+								end %></p>
 					</div>	
 				</div>
 			</div>
@@ -56,15 +57,14 @@
 						<img src="../../../images/calculator.png">
 					</div>
 					<div class="small-4 columns">
-						<p class="score2 math"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then schoolData[:sat][:'2013'][:averageM] end %></p>
+						<p class="score2 math"><%= schoolData[:sat][:'2013'][:averageM] %></p>
 					</div>
 					<div class="small-6 columns">
-						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageM]) && (schoolData[:sat][:'2013'][:averageM] != '') then differential = schoolData[:sat][:'2013'][:averageM].to_i - stateData[:sat][:'2013'][:averageM].to_i
+						<p class="scoreDetails2"><%= differential = schoolData[:sat][:'2013'][:averageM].to_i - stateData[:sat][:'2013'][:averageM].to_i
 								if differential > 0 then differential.to_s + ' above state average'
 								elsif differential == 0 then 'At state average'
 								else (differential*-1).to_s + ' below state average'
-							end
-						end %></p>
+							end%></p>
 					</div>	
 				</div>
 			</div>
@@ -75,16 +75,19 @@
 						<img src="../../../images/writing.png">
 					</div>
 					<div class="small-4 columns">
-						<p class="score2 writing"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then schoolData[:sat][:'2013'][:averageW] end %></p>
+						<p class="score2 writing"><%= schoolData[:sat][:'2013'][:averageW] %></p>
 					</div>
 					<div class="small-6 columns">
-						<p class="scoreDetails2"><%= if defined?(schoolData[:sat][:'2013'][:averageW]) && (schoolData[:sat][:'2013'][:averageW] != '') then differential = schoolData[:sat][:'2013'][:averageW].to_i - stateData[:sat][:'2013'][:averageW].to_i
+						<p class="scoreDetails2"><%= differential = schoolData[:sat][:'2013'][:averageW].to_i - stateData[:sat][:'2013'][:averageW].to_i
 								if differential > 0 then differential.to_s + ' above state average'
 								elsif differential == 0 then 'At state average'
 								else (differential*-1).to_s + ' below state average'
-							end
-						end %></p>
+							end %></p>
 					</div>	
 				</div>
 			</div>
-		</div>
+</div>
+
+<% else
+	puts schoolData[:name]
+end %>
