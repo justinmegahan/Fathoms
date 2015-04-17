@@ -74,6 +74,8 @@ require "active_support/inflector"
 #   end
 # end
 
+# Uncomment to generate new schools TypeAhead json data file
+
 # h = []
 # g = []
 # i = 0
