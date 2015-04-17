@@ -1,13 +1,13 @@
-var counties = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('county'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: '../data/counties.json'
-});
- 
 var zips = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('zip'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   prefetch: '../data/zips.json'
+});
+
+var counties = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('county'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: '../data/counties.json'
 });
 
 var cities = new Bloodhound({
@@ -15,14 +15,44 @@ var cities = new Bloodhound({
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   prefetch: '../data/cities.json'
 });
+
+var schools = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('school'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: '../data/schools.json'
+});
+
+var districts = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('district'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: '../data/districts.json'
+});
  
 zips.initialize();
 counties.initialize();
 cities.initialize();
+schools.initialize();
+districts.initialize();
 
 $('#search .typeahead').typeahead({
   highlight: true,
   minlength: 3
+},
+{
+  name: 'schools',
+  displayKey: 'school',
+  source: schools.ttAdapter(),
+  templates: {
+    header: '<h3 class="location">Schools</h3>'
+  }
+},
+{
+  name: 'districts',
+  displayKey: 'district',
+  source: districts.ttAdapter(),
+  templates: {
+    header: '<h3 class="location">Districts</h3>'
+  }
 },
 {
   name: 'counties',
@@ -46,13 +76,15 @@ $('#search .typeahead').typeahead({
   source: cities.ttAdapter(),
   templates: {
     header: '<h3 class="location">Cities</h3>'
-	}
+  }
 });
 
-$('#search').on('typeahead:selected', function(obj, datum, name) {      
+$('#search').on('typeahead:selected', function(obj, datum, name) {
+  console.log("/high/" + (datum["county-url"]) + ".html");
 	window.location.href = "/high/" + (datum["county-url"]) + ".html";
 });
 
-$('#search').on('typeahead:autocompleted', function(obj, datum, name) {      
+$('#search').on('typeahead:autocompleted', function(obj, datum, name) {
+  console.log("/high/" + (datum["county-url"]) + ".html");     
 	window.location.href = "/high/" + (datum["county-url"]) + ".html";
 });

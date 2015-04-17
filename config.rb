@@ -74,6 +74,38 @@ require "active_support/inflector"
 #   end
 # end
 
+# h = []
+# g = []
+# i = 0
+# j = 0
+# data.high.each do |test, _|
+  
+#   _.each do |county, __|
+#     __.districts.each do |district, ___|
+
+#       g[j] = Hash.new
+#       g[j][:district] = ___[:name]
+#       g[j][:'county-url'] = __[:slug] + "/" + ___[:slug]
+#       j = j + 1
+
+#       ___.schools.each do |school, ____|
+#         h[i] = Hash.new
+#         h[i][:school] = ____[:name]
+#         h[i][:'county-url'] = __[:slug] + "/" + ___[:slug] + "/" + ____[:slug]
+#         i = i + 1
+#         end
+#       end
+#     end
+#   end
+
+# File.open('source/data/districts.json', 'w') do |f|
+#     f.puts g.to_json
+# end
+
+# File.open('source/data/schools.json', 'w') do |f|
+#     f.puts h.to_json
+# end
+
 data.high.each do |test, _|
   
   _.each do |county, __|
