@@ -19,9 +19,9 @@
 
     <div class="row">
       <div class=" small-centered small-12 columns">
-        <p id="fathoms"><a href="../../index.html">F</a></p>
+        <p id="fathoms"><a href="https://www.fathoms.org">F</a></p>
         <ul id="nav">
-          <li><a href="../<%= countyData[:slug] %>.html"><%= countyData[:name] %></a></li>
+          <li><a href="../<%= countyData[:slug] %>"><%= countyData[:name] %></a></li>
           <li>/</li>
           <li><%= districtData[:name] %></a></li>
         </ul>
@@ -41,7 +41,7 @@
             <tr><th>School</th><th>Academic Performance Index</th></tr>
             <% for school in districtData[:schools] %>
               <tr>
-                <td><a href="<%= districtData[:slug] %>/<%= school[1][:slug] %>.html">
+                <td><a href="<%= districtData[:slug] %>/<%= school[1][:slug] %>">
                 <%= school[1][:name] %></a></td>
                 <td class="apiTableData"><%= if defined?(school[1][:api][:'growth'][:'2013']) && (school[1][:api][:'growth'][:'2013'] != '0') then school[1][:api][:'growth'][:'2013'] else '-' end %></td></tr>
             <% end %>

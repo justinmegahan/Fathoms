@@ -19,7 +19,7 @@
 
     <div class="row">
       <div class=" small-centered small-12 columns">
-        <p id="fathoms"><a href="../index.html">F</a></p>
+        <p id="fathoms"><a href="https://www.fathoms.org">F</a></p>
         <ul id="nav">
           <li><%= countyData[:name] %></li>
         </ul>
@@ -37,7 +37,7 @@
       <table>
           <tr><th>District</th></tr>
             <% for @district in countyData[:districts] %>
-              <tr><td><a href="<%= countyData[:slug] %>/<%= @district[1][:slug] %>.html"><%= @district[1][:name] %></a></td></tr>
+              <tr><td><a href="<%= countyData[:slug] %>/<%= @district[1][:slug] %>"><%= @district[1][:name] %></a></td></tr>
             <% end %>
         </table>
       </div>
