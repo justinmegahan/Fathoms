@@ -108,20 +108,20 @@ require "active_support/inflector"
 #     f.puts h.to_json
 # end
 
-# data.high.each do |test, _|
+data.high.each do |test, _|
   
-#   _.each do |county, __|
-#     proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :master => _,:stateData => data.highstate, :county => county, :countyData => __ }, :lang => :en, :ignore => true
+  _.each do |county, __|
+    proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :master => _,:stateData => data.highstate, :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
-#     __.districts.each do |district, ___|
-#       proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :master => _, :stateData => data.highstate, :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+    __.districts.each do |district, ___|
+      proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :master => _, :stateData => data.highstate, :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
-#       ___.schools.each do |school, ____|
-#         proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :master => _, :stateData => data.highstate, :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____, :apiRank => data.apiRank}, :lang => :en, :ignore => true
-#       end
-#     end
-#   end
-# end
+      ___.schools.each do |school, ____|
+        proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :master => _, :stateData => data.highstate, :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____, :apiRank => data.apiRank}, :lang => :en, :ignore => true
+      end
+    end
+  end
+end
 
 
 
@@ -158,24 +158,24 @@ require "active_support/inflector"
 
 # build sitemap
 
-sitemap = "<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>\n"
-data.high.each do |test, _|  
-  _.each do |county, __|
-    sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}</loc>\n</url>\n"
-    __.districts.each do |district, ___|
-      sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}/#{___[:slug]}</loc>\n</url>\n"
-      ___.schools.each do |school, ____|
-        sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}</loc>\n</url>\n"
-      end
-    end
-  end
-end
+# sitemap = "<?xml version='1.0' encoding='UTF-8'?>\n<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>\n"
+# data.high.each do |test, _|  
+#   _.each do |county, __|
+#     sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}</loc>\n</url>\n"
+#     __.districts.each do |district, ___|
+#       sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}/#{___[:slug]}</loc>\n</url>\n"
+#       ___.schools.each do |school, ____|
+#         sitemap = sitemap + "<url>\n<loc>https://www.fathoms.org/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}</loc>\n</url>\n"
+#       end
+#     end
+#   end
+# end
 
-sitemap = sitemap + '</urlset>'
+# sitemap = sitemap + '</urlset>'
 
-File.open('source/sitemap.xml', 'w') do |f|
-  f.puts sitemap
-end
+# File.open('source/sitemap.xml', 'w') do |f|
+#   f.puts sitemap
+# end
 
 
 # Build-specific configuration
