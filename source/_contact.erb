@@ -4,7 +4,7 @@
 					<div class="small-12 columns"><h2>Contact</h2></div>
 				</div>
 				
-				<%= if defined?(schoolData[:website]) && (schoolData[:website] != '0')then '<div class="row contact"> <img class="small-2 columns" src="../../../images/website.png"> <div class="small-10 columns"> <p class="scoreDetailsSmall"><a href="http://' + schoolData[:website] +'">' + schoolData[:website] + '</a></p> </div> </div>' end %>
+				<%= if defined?(schoolData[:website]) && (schoolData[:website] != '0') && (schoolData[:website] != '') then '<div class="row contact"> <img class="small-2 columns" src="../../../images/website.png"> <div class="small-10 columns"> <p class="scoreDetailsSmall"><a href="http://' + schoolData[:website] +'">' + schoolData[:website] + '</a></p> </div> </div>' end %>
 
 
 				<div class="row contact">

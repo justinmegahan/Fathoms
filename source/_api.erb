@@ -1,21 +1,21 @@
+<% if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') %>
 		<div class="row medium-uncollapse large-collapse">
 			<div class="small-12 columns"><h2>Academic Performance Index</h2></div>
 		</div>
 
 		<div class="row">
 			<div class="small-12 medium-4 columns">
-				<p class="score"><%= if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then schoolData[:api][:growth][:'2013'] end %></p>
+				<p class="score"><%= schoolData[:api][:growth][:'2013'] %></p>
 				<p class="scoreDetails">out of 1000</p>
-				<% if defined?(schoolData[:api][:growth][:'2013']) && (schoolData[:api][:growth][:'2013'] != '') then %>
+				
+				<% combinedSlug = districtData[:slug] + "/" + schoolData[:slug] %>
+				<div>
+					<div id="apiBar1" style="width:<%= 100-((1+(apiRank.index [combinedSlug,(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count) %>%"></div>
 
-					<div>
-						<div id="apiBar1" style="width:<%= 100-((1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count) %>%"></div>
-
-						<div id="apiBar2" style="width:<%= (1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count %>%"></div>
-					</div>
-					<p class="scoreDetails2"><%= (1+(apiRank.index ["#{schoolData[:slug]}",(schoolData[:api][:growth][:'2013'].to_i)])).ordinalize %> of <%=  apiRank.count %><br>
-					<span class="scoreDetailsSmall">schools in California</span></p>
-				<% else puts schoolData[:name] end %>
+					<div id="apiBar2" style="width:<%= (1+(apiRank.index [combinedSlug,(schoolData[:api][:growth][:'2013'].to_i)]))*100/apiRank.count %>%"></div>
+				</div>
+				<p class="scoreDetails2"><%= (1+(apiRank.index [combinedSlug,(schoolData[:api][:growth][:'2013'].to_i)])).ordinalize %> of <%=  apiRank.count %><br>
+				<span class="scoreDetailsSmall">schools in California</span></p>
 			</div>
 			<div class="small-12 medium-8 columns">
 				<div class="api ct-chart"></div></div>
@@ -61,3 +61,5 @@
 				</div>
 			</div>
 		</div>
+<% else puts schoolData[:name] + " does not have API data" %>
+<% end %>

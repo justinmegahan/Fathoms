@@ -17,18 +17,12 @@
     </head>
 
     <body>
-		<%= partial 'header', :locals => { :stateData => stateData, :countyData => countyData, :districtData => districtData, :schoolData => schoolData} %>
-
-		<%= partial 'api', :locals => { :master => master,:stateData => stateData, :schoolData => schoolData, :apiRank => apiRank, :districtData => districtData} %>
-
-		<%= partial 'cahsee', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-
-		<%= partial 'ap', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-
-		<%= partial 'sat', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-
-		<%= partial 'contact', :locals => { :stateData => stateData, :schoolData => schoolData} %>
-
-		<%= partial 'footer' %>
-	</body>
+    	<h1><%= schoolData[:name] %></h1>
+    	<table>
+					<tr><td>street</td><td><%= schoolData[:street] %></td></tr>
+					<tr><td>city</td><td><%= schoolData[:city] %></td></tr>
+					<tr><td>zip</td><td><%= schoolData[:zip] %></td></tr>
+					<tr><td>state</td><td><%= schoolData[:state] %></td></tr>
+		<table>
+		</body>
 </html>
