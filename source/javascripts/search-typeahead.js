@@ -36,6 +36,7 @@ districts.initialize();
 
 $('#search .typeahead').typeahead({
   highlight: true,
+  autoselect: true,
   minlength: 3
 },
 {
