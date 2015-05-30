@@ -4,6 +4,7 @@
 
       <script src="../../javascripts/chartist.js"></script>  
       <script async src="../../javascripts/jquery.js"></script>
+      <script async src="../../javascripts/jquery.tablesorter.combined.js"></script>
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 
@@ -36,16 +37,25 @@
     
     <div class="row">
       <div class="small-12 columns">
-        <table>
+        <table id="myTable" class="tablesorter">
+          <thead>
+            <tr><th>Schools<div class="arrow"></div></th><th>Academic Performance Index<div class="arrow"></div></th></tr>
+          </thead>
           <tbody>
-            <tr><th>Schools</th><th>Academic Performance Index</th></tr>
             <% for school in districtData[:schools] %>
               <tr>
                 <td><a href="<%= districtData[:slug] %>/<%= school[1][:slug] %>">
                 <%= school[1][:name] %></a></td>
-                <td class="apiTableData"><%= if defined?(school[1][:api][:'growth'][:'2013']) && (school[1][:api][:'growth'][:'2013'] != '0') then school[1][:api][:'growth'][:'2013'] else '-' end %></td></tr>
+                <td class="apiTableData"><%= if defined?(school[1][:api][:'growth'][:'2013']) && (school[1][:api][:'growth'][:'2013'] != '0') then school[1][:api][:'growth'][:'2013'] else '-' end %></td>
+              </tr>
             <% end %>
           </tbody>
         </table>
       </div>
     </div>
+    
+    <script>
+      $(function(){
+        $("#myTable").tablesorter();
+      });
+    </script>

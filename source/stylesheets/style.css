@@ -257,3 +257,17 @@ table {
 .apiTableData {
 	text-align: center;
 }
+
+.arrow {
+  width: 15px;
+  display: inline-block;
+  text-align: right;
+}
+
+#myTable > thead > tr > th.tablesorter-header.tablesorter-headerAsc > div > div:after { 
+      content: "  \2191";
+      }
+
+#myTable > thead > tr > th.tablesorter-header.tablesorter-headerDesc > div > div:after { 
+      content: "  \2193";
+      }
