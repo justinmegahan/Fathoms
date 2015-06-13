@@ -13,6 +13,15 @@
 
 <div class="row medium-uncollapse large-collapse">
 	<div id="title" class="small-12 columns">
-		<h1><%= schoolData[:name] %></h1>
+		<% a = schoolData[:name].length
+		case
+			when a < 15
+			  titleLength = 'short'
+			when a < 30
+			  titleLength = 'medium'
+			else
+			  titleLength = 'long'
+		end %>
+		<h1 class="<%= titleLength %>"><%= schoolData[:name] %></h1>
 	</div>
 </div>

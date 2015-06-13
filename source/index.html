@@ -8,7 +8,7 @@
 
     <meta name="keywords" content="california, schools, standardized testing, api, ap, sat, exit exams">
 
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<!-- 		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->
     	
     	<style>
 
@@ -420,7 +420,7 @@ table {
 				h1 {
 						padding: 0 30px;
 						color: white;
-						font-size: 6.5em;
+						font-size: 4em;
 						background-color: rgba(241, 108, 108, .75);
 						text-align: center;
 						display:block;
@@ -429,7 +429,7 @@ table {
 
 				h2 {
 					color: white;
-					font-size: 2em;
+					font-size: 1.25em;
 					max-width: 750px;
 					text-align: center;
 					margin: 0 auto;
@@ -446,7 +446,7 @@ table {
 #search {
 	text-align: center;
 	opacity: .75;
-	padding-bottom:200px;
+  padding-bottom:100px;
 }
 
 #search .location {
@@ -455,7 +455,7 @@ table {
 }
 
 input {
-	width: 500px;
+	width: 300px;
 	height: 75px;
 	padding-left: 25px;
 	border: 1px solid #fff;
@@ -465,7 +465,21 @@ input {
     border-radius: 30px;
 	font-size: 1.33em;
   font-weight:bold;
+  cursor: pointer;
 }
+
+        @media only screen and (min-width: 40.063em) {
+          h1 {
+            font-size: 6.5em;
+          }
+
+          h2 {
+            font-size: 2.5em;
+          }
+
+          input {width: 500px; }
+
+        }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    lightcoral;
@@ -540,19 +554,19 @@ pre {
 	<body>
 		<div id="wrapper">
 			<h1>Fathoms</h1>
-		<h2>Your California public schools. Easy to find, easy to understand.</h2>
+		<h2>Your California public schools.<br>Easy to find, easy to understand.</h2>
 			<div id="search">
 	        	<input class="typeahead" type="text" placeholder="Enter school, district, zip code, city, or county" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter school, district, zip code, city, or county'" />
 	    	</div>
 	    </div>
 	    <footer>
-	    	<p>Photograhp by <a href="https://www.flickr.com/photos/alkruse24/">alkruse24</a> and made available under a <a href="https://creativecommons.org/licenses/by/2.0/">Attribution 2.0 Generic license</a></p>
+	    	<p>Photograph by <a href="https://www.flickr.com/photos/alkruse24/">alkruse24</a> and made available under a <a href="https://creativecommons.org/licenses/by/2.0/">Attribution 2.0 Generic license</a></p>
 	   	</footer>
 
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="javascripts/jquery.js"></script>
+      <script src="javascripts/typeahead.jquery.js"></script>
+      <script src="javascripts/typeahead.bundle.js"></script>
     	<script src="javascripts/bloodhound.js"></script>
-    	<script src="javascripts/typeahead.bundle.js"></script>
-    	<script src="javascripts/typeahead.jquery.js"></script>
     	<script src="javascripts/search-typeahead.js"></script>
   
 <!-- Google Tag Manager -->

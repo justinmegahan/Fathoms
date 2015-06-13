@@ -1,6 +1,4 @@
-California:
-    name: California
-    slug: california
+
     counties:
       Alameda:
         name: Alameda

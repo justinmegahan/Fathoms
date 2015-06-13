@@ -35,11 +35,11 @@
 					  
 						var image = 'images/address.png';
 	  					var myLatLng = new google.maps.LatLng(<%= schoolData[:latitude] %>,<%= schoolData[:longitude] %>);
-						var beachMarker = new google.maps.Marker({
-							position: myLatLng,
-							map: map,
-							icon: image
-	  					});
+						var marker = new google.maps.Marker({
+      					position: new google.maps.LatLng(<%= schoolData[:latitude] %>,<%= schoolData[:longitude] %>),
+      					map: map,
+      					title: 'Hello World!'
+  					});
 					}
 
 					google.maps.event.addDomListener(window, 'load', initialize);
