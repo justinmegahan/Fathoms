@@ -33,7 +33,6 @@
 						map = new google.maps.Map(document.getElementById('map'),
 					      mapOptions);
 					  
-						var image = 'images/address.png';
 	  					var myLatLng = new google.maps.LatLng(<%= schoolData[:latitude] %>,<%= schoolData[:longitude] %>);
 						var marker = new google.maps.Marker({
       					position: new google.maps.LatLng(<%= schoolData[:latitude] %>,<%= schoolData[:longitude] %>),
