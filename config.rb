@@ -57,25 +57,25 @@ require "active_support/inflector"
 
 #Uncomment to regenerate apiRank
 
-h = Hash.new
+# h = Hash.new
 
-data.high.each do |test, _|
+# data.high.each do |test, _|
   
-  _.each do |county, __|
-    __.districts.each do |district, ___|
-      ___.schools.each do |school, ____|
-        if defined?(____[:api][:growth][:'2013']) && (____[:api][:growth][:'2013'] != '') then 
-          combinedSlug = ___[:slug] + "/" + ____[:slug]
-          h[combinedSlug] = ____[:api][:growth][:'2013'].to_i
-        end
-      end
-    end
-  end
+#   _.each do |county, __|
+#     __.districts.each do |district, ___|
+#       ___.schools.each do |school, ____|
+#         if defined?(____[:api][:growth][:'2013']) && (____[:api][:growth][:'2013'] != '') then 
+#           combinedSlug = ___[:slug] + "/" + ____[:slug]
+#           h[combinedSlug] = ____[:api][:growth][:'2013'].to_i
+#         end
+#       end
+#     end
+#   end
 
-  File.open('data/apiRank.json', 'w') do |f|
-    f.puts h.sort_by { |name, score| score*-1 }.to_json
-  end
-end
+#   File.open('data/apiRank.json', 'w') do |f|
+#     f.puts h.sort_by { |name, score| score*-1 }.to_json
+#   end
+# end
 
 # Uncomment to generate new schools TypeAhead json data file
 
@@ -112,40 +112,40 @@ end
 # end
 
 # uncomment to run with all school data
-# data.high.each do |test, _|
+data.high.each do |test, _|
 
 # uncomment to test with smaller yml
 # data.test.each do |test, _|
   
-  # _.each do |county, __|
-  #   proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :master => _,:stateData => data.highstate, :county => county, :countyData => __ }, :lang => :en, :ignore => true
-
-  #   __.districts.each do |district, ___|
-  #     proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :master => _, :stateData => data.highstate, :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
-
-  #     ___.schools.each do |school, ____|
-  #       proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :master => _, :stateData => data.highstate, :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____, :apiRank => data.apiRank}, :lang => :en, :ignore => true
-  #     end
-  #   end
-  # end
-# end
-
-
-
-data.middle.each do |test, _|
-  
   _.each do |county, __|
-    proxy "/middle/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+    proxy "/high/#{__[:slug]}.html", "/county.html", :locals => { :master => _,:stateData => data.highstate, :county => county, :countyData => __ }, :lang => :en, :ignore => true
 
     __.districts.each do |district, ___|
-      proxy "/middle/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+      proxy "/high/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :master => _, :stateData => data.highstate, :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
 
       ___.schools.each do |school, ____|
-        proxy "/middle/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/middle.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+        proxy "/high/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/high.html", :locals => { :master => _, :stateData => data.highstate, :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____, :apiRank => data.apiRank}, :lang => :en, :ignore => true
       end
     end
   end
 end
+
+
+
+# data.middle.each do |test, _|
+  
+#   _.each do |county, __|
+#     proxy "/middle/#{__[:slug]}.html", "/county.html", :locals => { :county => county, :countyData => __ }, :lang => :en, :ignore => true
+
+#     __.districts.each do |district, ___|
+#       proxy "/middle/#{__[:slug]}/#{___[:slug]}.html", "/district.html", :locals => { :district => district, :county => county, :countyData => __, :districtData => ___}, :lang => :en, :ignore => true
+
+#       ___.schools.each do |school, ____|
+#         proxy "/middle/#{__[:slug]}/#{___[:slug]}/#{____[:slug]}.html", "/middle.html", :locals => { :school => school, :district => district, :county => county, :districtData => ___, :countyData => __, :schoolData => ____}, :lang => :en, :ignore => true
+#       end
+#     end
+#   end
+# end
 
 # data.elementary.each do |test, _|
 
@@ -190,9 +190,11 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :imageoptim
+  activate :gzip
+  activate :minify_html
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets

@@ -6,6 +6,8 @@ gem "middleman", "~>3.1.6"
 
 gem 'middleman-imageoptim'
 
+gem "middleman-minify-html"
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
